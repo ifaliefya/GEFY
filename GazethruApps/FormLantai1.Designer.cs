@@ -282,7 +282,6 @@
         private System.Windows.Forms.Panel panelPeta;
         private System.Windows.Forms.PictureBox pbPetaLantai;
         private System.Windows.Forms.Panel PresenceCheck;
-        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnNext2;
         private System.Windows.Forms.ProgressBar progressBarPrev;
         private System.Windows.Forms.ProgressBar progressBarNext;
