@@ -199,7 +199,7 @@
             this.btn_Slideshow.Name = "btn_Slideshow";
             this.btn_Slideshow.Size = new System.Drawing.Size(282, 63);
             this.btn_Slideshow.TabIndex = 0;
-            this.btn_Slideshow.Text = "   Slideshow";
+            this.btn_Slideshow.Text = "   Permainan";
             this.btn_Slideshow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Slideshow.UseVisualStyleBackColor = true;
             this.btn_Slideshow.Click += new System.EventHandler(this.btn_Slideshow_Click);

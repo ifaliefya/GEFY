@@ -27,7 +27,7 @@ namespace GazethruApps.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Aliefya\\source\\repos" +
-            "\\GazeThru2ndUI\\GazethruApps\\Data\\GazeThruDB.mdf;Integrated Security=True")]
+            "\\GEFY\\GazethruApps\\DataGefyDB.mdf;Integrated Security=True")]
         public string sqlcon {
             get {
                 return ((string)(this["sqlcon"]));
