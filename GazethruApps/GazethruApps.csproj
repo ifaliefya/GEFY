@@ -176,6 +176,12 @@
     <Compile Include="FormAwal.Designer.cs">
       <DependentUpon>FormAwal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInformasi.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -223,6 +229,12 @@
     <Compile Include="KendaliTombol.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCGameOpsi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCGameOpsi.Designer.cs">
+      <DependentUpon>UCGameOpsi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAwal.resx">
       <DependentUpon>AdminAwal.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +286,9 @@
     <EmbeddedResource Include="FormAwal.resx">
       <DependentUpon>FormAwal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInformasi.resx">
       <DependentUpon>FormInformasi.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -306,6 +321,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCGameOpsi.resx">
+      <DependentUpon>UCGameOpsi.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

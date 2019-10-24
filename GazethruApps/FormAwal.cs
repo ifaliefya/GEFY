@@ -78,9 +78,8 @@ namespace GazethruApps
 
         private void formAwal_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 1;
-            timer1.Start();
-            timer2.Start();
+            //timer1.Interval = 1;
+            //timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -127,7 +126,7 @@ namespace GazethruApps
 
             if (eawal.status)
             {
-                formUser FormUser = formUser.getInstance();
+                FormGame FormUser = FormGame.getInstance();
                 FormUser.Show();                                
                 this.Hide();
                 timer1.Stop();
@@ -138,7 +137,7 @@ namespace GazethruApps
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            formUser FormUser = formUser.getInstance();
+            FormGame FormUser = FormGame.getInstance();
             FormUser.Show();
             this.Hide();
         }
