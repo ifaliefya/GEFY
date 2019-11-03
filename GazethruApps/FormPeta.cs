@@ -156,18 +156,12 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
+            
             if (e.status)
             {
                 formUser Home = formUser.getInstance();
                 Home.Show();
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
 
@@ -176,11 +170,6 @@ namespace GazethruApps
 
         private void TombolSatuTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formLantai1 FormLantai1 = formLantai1.getInstance();
@@ -188,7 +177,6 @@ namespace GazethruApps
                 FormLantai1.GetLantaiPic(1);
                 FormLantai1.LoadPointer(1);
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
 
@@ -197,11 +185,6 @@ namespace GazethruApps
 
         private void TombolDuaTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formLantai1 FormLantai1 = formLantai1.getInstance();
@@ -209,7 +192,6 @@ namespace GazethruApps
                 FormLantai1.GetLantaiPic(2);
                 FormLantai1.LoadPointer(2);
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
 
@@ -219,11 +201,6 @@ namespace GazethruApps
 
         private void TombolTigaTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formLantai1 FormLantai1 = formLantai1.getInstance();
@@ -231,7 +208,6 @@ namespace GazethruApps
                 FormLantai1.GetLantaiPic(3);
                 FormLantai1.LoadPointer(3);
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
 

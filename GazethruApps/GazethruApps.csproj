@@ -55,7 +55,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EyeXFramework">
-      <HintPath>..\..\Pengujian Gazethru\panel1\bin\Debug\EyeXFramework.dll</HintPath>
+      <HintPath>D:\Semester 8\A\gazethru00\GazethruApps\bin\Debug\EyeXFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -70,7 +70,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tobii.EyeX.Client.Net20">
-      <HintPath>..\..\Pengujian Gazethru\panel1\bin\Debug\Tobii.EyeX.Client.Net20.dll</HintPath>
+      <HintPath>D:\Semester 8\A\gazethru00\GazethruApps\bin\Debug\Tobii.EyeX.Client.Net20.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

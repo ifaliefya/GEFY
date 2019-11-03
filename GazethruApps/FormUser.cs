@@ -127,18 +127,11 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendaliuser.NoLook();
-            }
-
+            
             if (e.status)
             {
                 formInformasi FormInformasi = formInformasi.getInstance();
                 FormInformasi.Show();
-                kendaliuser.Close();
                 timer1.Stop();
                 this.Close();
             }
@@ -147,17 +140,10 @@ namespace GazethruApps
         }
         private void PetaTekan(ArgumenKendaliTombol e)
         {
-            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendaliuser.NoLook();
-            }
-
             if (e.status)
             {
                 formPeta FormPeta = formPeta.getInstance();
-                FormPeta.Show();                
-                kendaliuser.Close();
+                FormPeta.Show();
                 timer1.Stop();
                 this.Close();
             }
@@ -166,17 +152,10 @@ namespace GazethruApps
         }
         private void BackTekan(ArgumenKendaliTombol e)
         {
-            //Console.WriteLine(e.korelasiX + "  " + e.korelasiY + "  " + e.mataX + "  " + e.mataY);
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendaliuser.NoLook();
-            }
-
             if (e.status)
             {
                 formAwal FormHome = formAwal.getInstance();
-                FormHome.Show();                
-                kendaliuser.Close();
+                FormHome.Show();
                 timer1.Stop();
                 this.Close();
             }

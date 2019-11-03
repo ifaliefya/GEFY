@@ -109,17 +109,11 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
+            
             if(e.status)
             {
                 formUser FormUser = formUser.getInstance();
-                FormUser.Show();                
-                kendali.Close();
+                FormUser.Show();   
                 timer1.Stop();
                 this.Close();
             }
@@ -128,17 +122,11 @@ namespace GazethruApps
         }
 
         private void KgtnTekan(ArgumenKendaliTombol e)
-        {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
+        {            
             if (e.status)
             {
                 formKegiatan FormKegiatan = formKegiatan.getInstance();
-                FormKegiatan.Show();                
-                kendali.Close();
+                FormKegiatan.Show();  
                 timer1.Stop();
                 this.Close();
             }
@@ -148,16 +136,10 @@ namespace GazethruApps
 
         private void PrestasiTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formPrestasi FormPrestasi = formPrestasi.getInstance();
-                FormPrestasi.Show();                
-                kendali.Close();
+                FormPrestasi.Show();  
                 timer1.Stop();
                 this.Close();
             }
@@ -167,16 +149,10 @@ namespace GazethruApps
 
         private void TentangTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formTentang FormTentang = formTentang.getInstance();
-                FormTentang.Show();                
-                kendali.Close();
+                FormTentang.Show();  
                 timer1.Stop();
                 this.Close();
             }
