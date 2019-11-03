@@ -34,7 +34,6 @@ namespace GazethruApps
         {
             InitializeComponent();
 
-            PopulateViewID();
 
             kendali = new KendaliTombol();
             
@@ -65,29 +64,7 @@ namespace GazethruApps
             return Instance;
         }
 
-        public void PopulateViewID()
-        {
-            con.Open();
-            string SelectQuery = "SELECT No FROM Slider WHERE Show = 1;";
-            SqlCommand command = new SqlCommand(SelectQuery, con);
-            SqlDataReader read = command.ExecuteReader();
-            if(read.HasRows)
-            {
-                while (read.Read())
-                {
-                    numb = new object[read.FieldCount];
-                    ShowID.Add((int)read.GetValue(0));
-                }
-                con.Close();
-                nowShowing = ShowID[0];
-                maxCounter = ShowID.Count;
-            }
-            else
-            {
-                maxCounter = 0;
-            }
 
-        }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -101,9 +78,8 @@ namespace GazethruApps
 
         private void formAwal_Load(object sender, EventArgs e)
         {
-            timer1.Interval = 1;
-            timer1.Start();
-            timer2.Start();
+            //timer1.Interval = 1;
+            //timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -144,7 +120,7 @@ namespace GazethruApps
             }
             if (eawal.status)
             {
-                formUser FormUser = formUser.getInstance();
+                FormGame FormUser = FormGame.getInstance();
                 FormUser.Show();                                
                 this.Hide();
                 timer1.Stop();
@@ -155,7 +131,7 @@ namespace GazethruApps
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            formUser FormUser = formUser.getInstance();
+            FormGame FormUser = FormGame.getInstance();
             FormUser.Show();
             this.Hide();
         }
@@ -185,52 +161,6 @@ namespace GazethruApps
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            if (maxCounter>0)
-            {
-                LoadNextImage(nowShowing);
-            }
-            else
-            {
-                Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
-                pictureBox1.Image = bmp;
-            }
-        }
-
-        public void LoadNextImage (int ViewShow)
-        {
-            con.Open();
-            string SelectQuery = "SELECT * FROM Slider WHERE No=" + ViewShow;
-            SqlCommand command = new SqlCommand(SelectQuery, con);
-            SqlDataReader read = command.ExecuteReader();
-            if (read.Read())
-            {
-                Byte[] img = (Byte[])(read["Gambar"]);
-                MemoryStream ms = new MemoryStream(img);
-                pictureBox1.Image = Image.FromStream(ms);
-            }
-            else
-            {
-                pictureBox1.Image = null;
-            }
-            con.Close();
-            if (counter == maxCounter-1)
-            {
-                counter = 0;
-                nowShowing = ShowID[counter];
-            }
-            else
-            {
-                counter ++;
-                nowShowing = ShowID[counter];
-            }
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
+                      
     }           
 }

@@ -80,6 +80,12 @@
     <Compile Include="AdminAwal.Designer.cs">
       <DependentUpon>AdminAwal.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminGame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminGame.Designer.cs">
+      <DependentUpon>AdminGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminInfoNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     <Compile Include="FormAwal.Designer.cs">
       <DependentUpon>FormAwal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInformasi.cs">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -217,8 +229,17 @@
     <Compile Include="KendaliTombol.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UCGameOpsi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCGameOpsi.Designer.cs">
+      <DependentUpon>UCGameOpsi.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAwal.resx">
       <DependentUpon>AdminAwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGame.resx">
+      <DependentUpon>AdminGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminInfoNew.resx">
       <DependentUpon>AdminInfoNew.cs</DependentUpon>
@@ -265,6 +286,9 @@
     <EmbeddedResource Include="FormAwal.resx">
       <DependentUpon>FormAwal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInformasi.resx">
       <DependentUpon>FormInformasi.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -297,6 +321,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCGameOpsi.resx">
+      <DependentUpon>UCGameOpsi.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -319,12 +346,12 @@
     <None Include="Resources\defaultPicRuang.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\GazeThruDB.mdf">
+    <Content Include="Data\GefyDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\GazeThruDB_log.ldf">
+    <Content Include="Data\GefyDB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>GazeThruDB.mdf</DependentUpon>
+      <DependentUpon>GefyDB.mdf</DependentUpon>
     </Content>
     <Content Include="Tobii.EyeX.Client.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
