@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelUC = new System.Windows.Forms.FlowLayoutPanel();
+            this.PanelUC = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // PanelUC
@@ -48,12 +48,13 @@
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGame";
+            this.Load += new System.EventHandler(this.FormGame_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel PanelUC;
+        private System.Windows.Forms.Panel PanelUC;
     }
 }

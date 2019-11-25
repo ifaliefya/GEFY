@@ -30,17 +30,53 @@ namespace GazethruApps
         int Min;
         int Max;
         List<int> randomRecords = new List<int>();
+        string Question;
+        public struct OpsiKiri
+        {
+            public string NamaOpsiKiri;
+            public Byte[] GambarOpsiKiri;
+            public string KetOpsiKiri;
+            public bool NilaiOpsiKiri;
+
+            public OpsiKiri(string namaA, Byte[] gambarA, string ketA, bool nilaiA)
+            {
+                NamaOpsiKiri = namaA;
+                GambarOpsiKiri = gambarA;
+                KetOpsiKiri = ketA;
+                NilaiOpsiKiri = nilaiA;
+            }
+        }
+
+        public struct OpsiKanan
+        {
+            public string NamaOpsiKanan;
+            public Byte[] GambarOpsiKanan;
+            public string KetOpsiKanan;
+            public bool NilaiOpsiKanan;
+
+            public OpsiKanan(string namaB, Byte[] gambarB, string ketB, bool nilaiB)
+            {
+                NamaOpsiKanan = namaB;
+                GambarOpsiKanan = gambarB;
+                KetOpsiKanan = ketB;
+                NilaiOpsiKanan = nilaiB;
+            }
+        }
 
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+
+        List<double> wx;
+        List<double> wy;
+        int lap = 0;
+
+        KendaliTombol kendaliuser;
 
         public UCGameOpsi()
         {
             InitializeComponent();
 
-            //RandomingID();
-            GetRandomRecords();
-            Coba();
+
         }
 
         
@@ -50,47 +86,61 @@ namespace GazethruApps
             //RandomingID();
         }
 
-        public void GetRandomRecords()
+        public void LoadOption (int GameSeq)
         {
             con.Open();
-            string SelectQuery = "SELECT No FROM Game";
-            SqlCommand command = new SqlCommand(SelectQuery, con);
+            string SelectOption = "SELECT * FROM Game WHERE No = ";
+            SqlCommand command = new SqlCommand(SelectOption + GameSeq, con);
             SqlDataReader read = command.ExecuteReader();
             if (read.HasRows)
             {
                 while (read.Read())
                 {
-                    GameSequence.Add((int)read.GetValue(0));
+                    Question = (String)(read["Quest"]);
+
+                    var namaL = (String)(read["NamaL"]);
+                    var descL = (String)(read["DescL"]);
+                    var nilaiL= (Boolean)(read["NilaiL"]);
+                    Byte[] imgL = (Byte[])(read["GambarL"]);
+                    var OpsiL = new OpsiKiri(namaL, imgL, descL, nilaiL);
+
+                    var namaR = (String)(read["NamaR"]);
+                    var descR = (String)(read["DescR"]);
+                    var nilaiR= (Boolean)(read["NilaiR"]);
+                    Byte[] imgR = (Byte[])(read["GambarR"]);
+                    var OpsiR = new OpsiKanan(namaR, imgR, descR, nilaiR);
+
+                    PictureBox OpsiLeft = AddOpsi(true, imgL);
+                    PanelOpsi.Controls.Add(OpsiLeft);
+
+                    //AddOpsi(false, imgR);
                 }
-                //Min = 0;
-                Max = GameSequence.Count;
             }
             con.Close();
-
-            var numberOfRecords = GameSequence.Count;
-            for (int i=0; i<numberOfRecords; i++)
-            {
-                var randomGenerator = new Random();
-                while (true)
-                {
-                    var randomIndex = randomGenerator.Next(0, numberOfRecords);
-                    var GameSeq = GameSequence[randomIndex];
-                    if (!randomRecords.Contains(GameSeq))
-                    {
-                        randomRecords.Add(GameSeq);
-                        break;
-                    }
-                }
-            }
         }
 
-        public void Coba()
+        PictureBox AddOpsi (bool Kiri, Byte[] img)
         {
-            var counter = randomRecords.Count;
-            for (int i=0; i<counter; i++)
+            PictureBox Opsi = new PictureBox();
+            Opsi.Size = new Size(200, 200);
+            Opsi.SizeMode = PictureBoxSizeMode.Zoom;
+            MemoryStream ms = new MemoryStream(img);
+            Opsi.Image = Image.FromStream(ms);
+            Opsi.BackColor = Color.Transparent;
+
+            if (Kiri == true)
             {
-                int cobala = randomRecords[i];
+                Opsi.Name = "OpsiKiri"; 
+                Opsi.Location = new Point(332, 87);
             }
+            else
+            {
+                Opsi.Name = "OpsiKanan";
+                Opsi.Location = new Point(1403, 642);
+            }
+            return Opsi;
         }
+
+
     }
 }
