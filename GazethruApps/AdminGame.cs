@@ -42,7 +42,7 @@ namespace GazethruApps
 
         public void GameList(string valueToSearch)
         {
-            SqlCommand command = new SqlCommand("SELECT No, GambarL, GambarR FROM Game WHERE CONCAT(No, NamaL, NamaR, DescL, DescR) LIKE '%" + valueToSearch + "%'", con);
+            SqlCommand command = new SqlCommand("SELECT No, Quest, GambarL, GambarR FROM Game WHERE CONCAT(No, NamaL, NamaR, DescL, DescR) LIKE '%" + valueToSearch + "%'", con);
             SqlDataAdapter adapter = new SqlDataAdapter(command); 
             DataTable table = new DataTable(); 
             adapter.Fill(table); 
@@ -68,11 +68,11 @@ namespace GazethruApps
         private void CreateImageColumn()
         {
             DataGridViewImageColumn imgLCol = new DataGridViewImageColumn();
-            imgLCol = (DataGridViewImageColumn)DGVGame.Columns[1];
+            imgLCol = (DataGridViewImageColumn)DGVGame.Columns[2];
             imgLCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
 
             DataGridViewImageColumn imgRCol = new DataGridViewImageColumn();
-            imgRCol = (DataGridViewImageColumn)DGVGame.Columns[2];
+            imgRCol = (DataGridViewImageColumn)DGVGame.Columns[3];
             imgRCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
 
@@ -160,9 +160,9 @@ namespace GazethruApps
 
         private void DGVGame_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                this.DGVGame.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
+            //try
+            //{
+            //    this.DGVGame.Rows[e.RowIndex].Cells["No"].ReadOnly = true;
 
                 int selected = (int)DGVGame.Rows[e.RowIndex].Cells["No"].Value;
                 EditSession = selected;
@@ -180,11 +180,11 @@ namespace GazethruApps
                 {
                     PreviewDetail(EditSession);
                 }
-            }
-            catch
-            {
-                return;
-            }
+            //}
+            //catch
+            //{
+            //    return;
+            //}
 
         }
 
@@ -212,6 +212,7 @@ namespace GazethruApps
                     PicBoxGambarR.Image = null;
                 }
 
+                TextBoxQuest.Text = (String)(read["Quest"]);
                 TextBoxNamaL.Text = (String)(read["NamaL"]);
                 TextBoxNamaR.Text = (String)(read["NamaR"]);
                 TextBoxKetL.Text = (String)(read["DescL"]);
@@ -222,6 +223,7 @@ namespace GazethruApps
             else
             {
                 DefaultPreview();
+                con.Close();
             }
             con.Close();
         }
@@ -231,6 +233,7 @@ namespace GazethruApps
             Bitmap bmp = new Bitmap(Properties.Resources.defaultPic);
             PicBoxGambarL.Image = bmp;
             PicBoxGambarR.Image = bmp;
+            TextBoxQuest.Text = null;
             TextBoxNamaL.Text = null;
             TextBoxNamaR.Text = null;
             TextBoxKetL.Text = null;
@@ -245,9 +248,10 @@ namespace GazethruApps
             {
                 string InsertQuery =
                 "DBCC CHECKIDENT (Game, RESEED," + LastID + "); " + //DBCC adalah menyalahi aturan increment dan unique, semoga tidak error
-                "INSERT INTO Game(NamaL, NamaR, GambarL, GambarR, DescL, DescR, NilaiL, NilaiR) VALUES (@namal, @namar, @gambarl, @gambarr, @descl, @descr, @nilail, @nilair);";
+                "INSERT INTO Game(Quest, NamaL, NamaR, GambarL, GambarR, DescL, DescR, NilaiL, NilaiR) VALUES (@quest, @namal, @namar, @gambarl, @gambarr, @descl, @descr, @nilail, @nilair);";
                 SqlCommand command = new SqlCommand(InsertQuery, con);
 
+                command.Parameters.Add("@quest", SqlDbType.VarChar).Value = TextBoxQuest.Text;
                 command.Parameters.Add("@namal", SqlDbType.VarChar).Value = TextBoxNamaL.Text;
                 command.Parameters.Add("@namar", SqlDbType.VarChar).Value = TextBoxNamaR.Text;
                 command.Parameters.Add("@descl", SqlDbType.VarChar).Value = TextBoxKetL.Text;
@@ -270,9 +274,10 @@ namespace GazethruApps
             else
             {
                 string UpdateQuery =
-               "UPDATE Game SET NamaL=@namal, NamaR=@namar, GambarL=@gambarl, GambarR=@gambarr, DescL=@descl, DescR=@descr, NilaiL=@nilail, NilaiR=@nilair WHERE No =" + EditSession;
+               "UPDATE Game SET Quest=@quest, NamaL=@namal, NamaR=@namar, GambarL=@gambarl, GambarR=@gambarr, DescL=@descl, DescR=@descr, NilaiL=@nilail, NilaiR=@nilair WHERE No =" + EditSession;
                 SqlCommand command = new SqlCommand(UpdateQuery, con);
 
+                command.Parameters.Add("@quest", SqlDbType.VarChar).Value = TextBoxQuest.Text;
                 command.Parameters.Add("@namal", SqlDbType.VarChar).Value = TextBoxNamaL.Text;
                 command.Parameters.Add("@namar", SqlDbType.VarChar).Value = TextBoxNamaR.Text;
                 command.Parameters.Add("@descl", SqlDbType.VarChar).Value = TextBoxKetL.Text;

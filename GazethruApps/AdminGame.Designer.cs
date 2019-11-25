@@ -58,6 +58,8 @@
             this.BtnAdd = new System.Windows.Forms.Button();
             this.LabelTotal = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelQuest = new System.Windows.Forms.Label();
+            this.TextBoxQuest = new System.Windows.Forms.TextBox();
             this.PanelPreview.SuspendLayout();
             this.PanelR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxGambarR)).BeginInit();
@@ -78,7 +80,9 @@
             // 
             // PanelPreview
             // 
+            this.PanelPreview.Controls.Add(this.labelQuest);
             this.PanelPreview.Controls.Add(this.BtnSimpan);
+            this.PanelPreview.Controls.Add(this.TextBoxQuest);
             this.PanelPreview.Controls.Add(this.PanelR);
             this.PanelPreview.Controls.Add(this.PanelL);
             this.PanelPreview.Location = new System.Drawing.Point(533, 168);
@@ -89,7 +93,7 @@
             // BtnSimpan
             // 
             this.BtnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnSimpan.Location = new System.Drawing.Point(403, 23);
+            this.BtnSimpan.Location = new System.Drawing.Point(404, 26);
             this.BtnSimpan.Name = "BtnSimpan";
             this.BtnSimpan.Size = new System.Drawing.Size(248, 38);
             this.BtnSimpan.TabIndex = 43;
@@ -108,16 +112,16 @@
             this.PanelR.Controls.Add(this.TextBoxNamaR);
             this.PanelR.Controls.Add(this.PicBoxGambarR);
             this.PanelR.Controls.Add(this.TextBoxKetR);
-            this.PanelR.Location = new System.Drawing.Point(560, 82);
+            this.PanelR.Location = new System.Drawing.Point(555, 133);
             this.PanelR.Name = "PanelR";
-            this.PanelR.Size = new System.Drawing.Size(448, 669);
+            this.PanelR.Size = new System.Drawing.Size(448, 630);
             this.PanelR.TabIndex = 38;
             // 
             // LabelGambarR
             // 
             this.LabelGambarR.AutoSize = true;
             this.LabelGambarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelGambarR.Location = new System.Drawing.Point(152, 6);
+            this.LabelGambarR.Location = new System.Drawing.Point(152, 12);
             this.LabelGambarR.Name = "LabelGambarR";
             this.LabelGambarR.Size = new System.Drawing.Size(174, 24);
             this.LabelGambarR.TabIndex = 49;
@@ -127,7 +131,7 @@
             // 
             this.LabelNilaiR.AutoSize = true;
             this.LabelNilaiR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNilaiR.Location = new System.Drawing.Point(164, 602);
+            this.LabelNilaiR.Location = new System.Drawing.Point(164, 574);
             this.LabelNilaiR.Name = "LabelNilaiR";
             this.LabelNilaiR.Size = new System.Drawing.Size(114, 16);
             this.LabelNilaiR.TabIndex = 47;
@@ -137,7 +141,7 @@
             // 
             this.LabelKetR.AutoSize = true;
             this.LabelKetR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelKetR.Location = new System.Drawing.Point(34, 454);
+            this.LabelKetR.Location = new System.Drawing.Point(34, 435);
             this.LabelKetR.Name = "LabelKetR";
             this.LabelKetR.Size = new System.Drawing.Size(154, 16);
             this.LabelKetR.TabIndex = 46;
@@ -147,7 +151,7 @@
             // 
             this.LabelNamaR.AutoSize = true;
             this.LabelNamaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNamaR.Location = new System.Drawing.Point(34, 387);
+            this.LabelNamaR.Location = new System.Drawing.Point(34, 374);
             this.LabelNamaR.Name = "LabelNamaR";
             this.LabelNamaR.Size = new System.Drawing.Size(116, 16);
             this.LabelNamaR.TabIndex = 43;
@@ -156,7 +160,7 @@
             // BtnPilihGambarR
             // 
             this.BtnPilihGambarR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPilihGambarR.Location = new System.Drawing.Point(60, 309);
+            this.BtnPilihGambarR.Location = new System.Drawing.Point(60, 315);
             this.BtnPilihGambarR.Name = "BtnPilihGambarR";
             this.BtnPilihGambarR.Size = new System.Drawing.Size(153, 36);
             this.BtnPilihGambarR.TabIndex = 45;
@@ -168,7 +172,7 @@
             // 
             this.NilaiR.AutoSize = true;
             this.NilaiR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NilaiR.Location = new System.Drawing.Point(141, 621);
+            this.NilaiR.Location = new System.Drawing.Point(141, 593);
             this.NilaiR.Name = "NilaiR";
             this.NilaiR.Size = new System.Drawing.Size(161, 28);
             this.NilaiR.TabIndex = 43;
@@ -179,7 +183,7 @@
             // TextBoxNamaR
             // 
             this.TextBoxNamaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxNamaR.Location = new System.Drawing.Point(27, 406);
+            this.TextBoxNamaR.Location = new System.Drawing.Point(27, 393);
             this.TextBoxNamaR.Name = "TextBoxNamaR";
             this.TextBoxNamaR.Size = new System.Drawing.Size(389, 24);
             this.TextBoxNamaR.TabIndex = 43;
@@ -188,7 +192,7 @@
             // 
             this.PicBoxGambarR.BackColor = System.Drawing.SystemColors.Control;
             this.PicBoxGambarR.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PicBoxGambarR.Location = new System.Drawing.Point(60, 48);
+            this.PicBoxGambarR.Location = new System.Drawing.Point(60, 54);
             this.PicBoxGambarR.Margin = new System.Windows.Forms.Padding(2);
             this.PicBoxGambarR.Name = "PicBoxGambarR";
             this.PicBoxGambarR.Size = new System.Drawing.Size(322, 297);
@@ -199,7 +203,7 @@
             // TextBoxKetR
             // 
             this.TextBoxKetR.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxKetR.Location = new System.Drawing.Point(23, 473);
+            this.TextBoxKetR.Location = new System.Drawing.Point(23, 454);
             this.TextBoxKetR.Name = "TextBoxKetR";
             this.TextBoxKetR.Size = new System.Drawing.Size(397, 104);
             this.TextBoxKetR.TabIndex = 43;
@@ -216,16 +220,16 @@
             this.PanelL.Controls.Add(this.TextBoxNamaL);
             this.PanelL.Controls.Add(this.PicBoxGambarL);
             this.PanelL.Controls.Add(this.TextBoxKetL);
-            this.PanelL.Location = new System.Drawing.Point(48, 82);
+            this.PanelL.Location = new System.Drawing.Point(43, 133);
             this.PanelL.Name = "PanelL";
-            this.PanelL.Size = new System.Drawing.Size(448, 669);
+            this.PanelL.Size = new System.Drawing.Size(448, 630);
             this.PanelL.TabIndex = 38;
             // 
             // LabelGambarL
             // 
             this.LabelGambarL.AutoSize = true;
             this.LabelGambarL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelGambarL.Location = new System.Drawing.Point(152, 6);
+            this.LabelGambarL.Location = new System.Drawing.Point(152, 12);
             this.LabelGambarL.Name = "LabelGambarL";
             this.LabelGambarL.Size = new System.Drawing.Size(140, 24);
             this.LabelGambarL.TabIndex = 49;
@@ -235,7 +239,7 @@
             // 
             this.LabelNilaiL.AutoSize = true;
             this.LabelNilaiL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNilaiL.Location = new System.Drawing.Point(164, 602);
+            this.LabelNilaiL.Location = new System.Drawing.Point(164, 574);
             this.LabelNilaiL.Name = "LabelNilaiL";
             this.LabelNilaiL.Size = new System.Drawing.Size(114, 16);
             this.LabelNilaiL.TabIndex = 47;
@@ -245,7 +249,7 @@
             // 
             this.LabelKetL.AutoSize = true;
             this.LabelKetL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelKetL.Location = new System.Drawing.Point(34, 454);
+            this.LabelKetL.Location = new System.Drawing.Point(34, 435);
             this.LabelKetL.Name = "LabelKetL";
             this.LabelKetL.Size = new System.Drawing.Size(154, 16);
             this.LabelKetL.TabIndex = 46;
@@ -255,7 +259,7 @@
             // 
             this.LabelNamaL.AutoSize = true;
             this.LabelNamaL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelNamaL.Location = new System.Drawing.Point(34, 387);
+            this.LabelNamaL.Location = new System.Drawing.Point(34, 374);
             this.LabelNamaL.Name = "LabelNamaL";
             this.LabelNamaL.Size = new System.Drawing.Size(116, 16);
             this.LabelNamaL.TabIndex = 43;
@@ -264,7 +268,7 @@
             // BtnPilihGambarL
             // 
             this.BtnPilihGambarL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPilihGambarL.Location = new System.Drawing.Point(60, 309);
+            this.BtnPilihGambarL.Location = new System.Drawing.Point(60, 315);
             this.BtnPilihGambarL.Name = "BtnPilihGambarL";
             this.BtnPilihGambarL.Size = new System.Drawing.Size(153, 36);
             this.BtnPilihGambarL.TabIndex = 45;
@@ -276,7 +280,7 @@
             // 
             this.NilaiL.AutoSize = true;
             this.NilaiL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NilaiL.Location = new System.Drawing.Point(141, 621);
+            this.NilaiL.Location = new System.Drawing.Point(141, 593);
             this.NilaiL.Name = "NilaiL";
             this.NilaiL.Size = new System.Drawing.Size(161, 28);
             this.NilaiL.TabIndex = 43;
@@ -287,7 +291,7 @@
             // TextBoxNamaL
             // 
             this.TextBoxNamaL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxNamaL.Location = new System.Drawing.Point(27, 406);
+            this.TextBoxNamaL.Location = new System.Drawing.Point(27, 393);
             this.TextBoxNamaL.Name = "TextBoxNamaL";
             this.TextBoxNamaL.Size = new System.Drawing.Size(389, 24);
             this.TextBoxNamaL.TabIndex = 43;
@@ -296,7 +300,7 @@
             // 
             this.PicBoxGambarL.BackColor = System.Drawing.SystemColors.Control;
             this.PicBoxGambarL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PicBoxGambarL.Location = new System.Drawing.Point(60, 48);
+            this.PicBoxGambarL.Location = new System.Drawing.Point(60, 54);
             this.PicBoxGambarL.Margin = new System.Windows.Forms.Padding(2);
             this.PicBoxGambarL.Name = "PicBoxGambarL";
             this.PicBoxGambarL.Size = new System.Drawing.Size(322, 297);
@@ -307,7 +311,7 @@
             // TextBoxKetL
             // 
             this.TextBoxKetL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBoxKetL.Location = new System.Drawing.Point(23, 473);
+            this.TextBoxKetL.Location = new System.Drawing.Point(23, 454);
             this.TextBoxKetL.Name = "TextBoxKetL";
             this.TextBoxKetL.Size = new System.Drawing.Size(397, 104);
             this.TextBoxKetL.TabIndex = 43;
@@ -400,6 +404,26 @@
             this.textBox1.Size = new System.Drawing.Size(60, 26);
             this.textBox1.TabIndex = 50;
             // 
+            // labelQuest
+            // 
+            this.labelQuest.AutoSize = true;
+            this.labelQuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuest.Location = new System.Drawing.Point(39, 91);
+            this.labelQuest.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelQuest.Name = "labelQuest";
+            this.labelQuest.Size = new System.Drawing.Size(119, 24);
+            this.labelQuest.TabIndex = 53;
+            this.labelQuest.Text = "Pertanyaan  :";
+            // 
+            // TextBoxQuest
+            // 
+            this.TextBoxQuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxQuest.Location = new System.Drawing.Point(162, 91);
+            this.TextBoxQuest.Margin = new System.Windows.Forms.Padding(2);
+            this.TextBoxQuest.Name = "TextBoxQuest";
+            this.TextBoxQuest.Size = new System.Drawing.Size(841, 26);
+            this.TextBoxQuest.TabIndex = 52;
+            // 
             // AdminGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +443,7 @@
             this.Size = new System.Drawing.Size(1630, 1004);
             this.Load += new System.EventHandler(this.AdminGame_Load);
             this.PanelPreview.ResumeLayout(false);
+            this.PanelPreview.PerformLayout();
             this.PanelR.ResumeLayout(false);
             this.PanelR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxGambarR)).EndInit();
@@ -463,5 +488,7 @@
         private System.Windows.Forms.Label LabelNilaiL;
         private System.Windows.Forms.Label LabelTotal;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelQuest;
+        private System.Windows.Forms.TextBox TextBoxQuest;
     }
 }
