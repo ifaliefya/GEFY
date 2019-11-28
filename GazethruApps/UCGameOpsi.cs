@@ -25,45 +25,25 @@ namespace GazethruApps
             }
         }
 
-        List<int> GameSequence = new List<int>();
-        int counter;
-        int Min;
-        int Max;
-        List<int> randomRecords = new List<int>();
         string Question;
-        public struct OpsiKiri
+        public struct Option
         {
-            public string NamaOpsiKiri;
-            public Byte[] GambarOpsiKiri;
-            public string KetOpsiKiri;
-            public bool NilaiOpsiKiri;
+            public string NamaOpsi;
+            public Byte[] GambarOpsi;
+            public string KetOpsi;
+            public bool NilaiOpsi;
 
-            public OpsiKiri(string namaA, Byte[] gambarA, string ketA, bool nilaiA)
+            public Option(string nama, Byte[] gambar, string ket, bool nilai)
             {
-                NamaOpsiKiri = namaA;
-                GambarOpsiKiri = gambarA;
-                KetOpsiKiri = ketA;
-                NilaiOpsiKiri = nilaiA;
+                NamaOpsi = nama;
+                GambarOpsi = gambar;
+                KetOpsi = ket;
+                NilaiOpsi = nilai;
             }
         }
 
-        public struct OpsiKanan
-        {
-            public string NamaOpsiKanan;
-            public Byte[] GambarOpsiKanan;
-            public string KetOpsiKanan;
-            public bool NilaiOpsiKanan;
-
-            public OpsiKanan(string namaB, Byte[] gambarB, string ketB, bool nilaiB)
-            {
-                NamaOpsiKanan = namaB;
-                GambarOpsiKanan = gambarB;
-                KetOpsiKanan = ketB;
-                NilaiOpsiKanan = nilaiB;
-            }
-        }
-
-
+        Option OpsiL;
+        Option OpsiR;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
         List<double> wx;
@@ -75,15 +55,62 @@ namespace GazethruApps
         public UCGameOpsi()
         {
             InitializeComponent();
+            wx = new List<double>();
+            wy = new List<double>();
+            wx.Add(0);
+            wy.Add(0);
+            wx.Add(0);
+            wy.Add(0);
 
+            wx[0] = 372; //lokasi awal OpsiKiri
+            wy[0] = 87;
+            wx[1] = 1351; //lokasi awal OpsiKanan
+            wy[1] = 635;
+
+            //kendaliuser = new KendaliTombol();
+            //kendaliuser.TambahTombol(PBOpsiKiri, new FungsiTombol(PilihOpsiKiri));
+            //kendaliuser.TambahTombol(PBOpsiKanan, new FungsiTombol(PilihOpsiKanan));
+
+            //kendaliuser.Start();
 
         }
 
         
-
         private void UCGameOpsi_Load(object sender, EventArgs e)
         {
-            //RandomingID();
+            TimerTombol.Interval = 1;
+            TimerTombol.Start();
+        }
+
+        private void TimerTombol_Tick(object sender, EventArgs e)
+        {
+            PBOpsiKiri.Location = new Point((int)wx[0], (int)wy[0]);
+            PBOpsiKanan.Location = new Point((int)wx[1], (int)wy[1]);
+
+            //progressBarInform.Location = new Point((int)wx[0], (int)wy[0]);
+            //progressBarPeta.Location = new Point((int)wx[1], (int)wy[1]);
+            //progressBarBack.Location = new Point((int)wx[2], (int)wy[2]);
+
+            if (lap == 0)
+            {
+                wy[0]--;
+                wy[1]++;
+            }
+            if (lap == 1)
+            {
+                wy[0]++;
+                wy[1]--;
+            }
+            if (wy[0] == 75)
+            {
+                lap = 1;
+            }
+            if (wy[0] == 475)
+            {
+                lap = 0;
+            }
+
+            //kendaliuser.CekTombol();
         }
 
         public void LoadOption (int GameSeq)
@@ -102,21 +129,29 @@ namespace GazethruApps
                     var descL = (String)(read["DescL"]);
                     var nilaiL= (Boolean)(read["NilaiL"]);
                     Byte[] imgL = (Byte[])(read["GambarL"]);
-                    var OpsiL = new OpsiKiri(namaL, imgL, descL, nilaiL);
+                    OpsiL = new Option(namaL, imgL, descL, nilaiL);
 
                     var namaR = (String)(read["NamaR"]);
                     var descR = (String)(read["DescR"]);
                     var nilaiR= (Boolean)(read["NilaiR"]);
                     Byte[] imgR = (Byte[])(read["GambarR"]);
-                    var OpsiR = new OpsiKanan(namaR, imgR, descR, nilaiR);
+                    OpsiR = new Option(namaR, imgR, descR, nilaiR);
 
-                    PictureBox OpsiLeft = AddOpsi(true, imgL);
-                    PanelOpsi.Controls.Add(OpsiLeft);
+                    LoadPict(imgL, imgR);
 
-                    //AddOpsi(false, imgR);
+                    LabelCoba.Text = GameSeq.ToString();
                 }
             }
             con.Close();
+        }
+        
+        public void LoadPict (Byte[] img1, Byte[] img2)
+        {
+            MemoryStream ms1 = new MemoryStream(img1);
+            PBOpsiKiri.Image = Image.FromStream(ms1);
+
+            MemoryStream ms2 = new MemoryStream(img2);
+            PBOpsiKanan.Image = Image.FromStream(ms2);
         }
 
         PictureBox AddOpsi (bool Kiri, Byte[] img)
@@ -141,6 +176,52 @@ namespace GazethruApps
             return Opsi;
         }
 
+        private async void PBOpsiKiri_Click(object sender, EventArgs e)
+        {
+            TimerTombol.Stop();
+            
+            OpsiTerpilih(PBOpsiKiri, OpsiL);
+           
+        }
 
+        private void PBOpsiKanan_Click(object sender, EventArgs e)
+        {
+            TimerTombol.Stop();
+            
+            OpsiTerpilih(PBOpsiKanan, OpsiR);
+        }
+
+        public void OpsiTerpilih(PictureBox PBOpsiTerpilih, Option OpsiTerpilih)
+        {
+            PBOpsiKiri.Location = new Point(332, 315);
+            PBOpsiKanan.Location = new Point(1403, 315);
+
+            System.Threading.Thread.Sleep(1000);
+            foreach (Control item in PanelOpsi.Controls)
+                if (item is PictureBox)
+                {
+                    if (item == PBOpsiTerpilih)
+                    {
+                        item.Size = new Size(250, 250);
+                    }
+                    else
+                    {
+                        //transparan
+                        item.Visible = false;
+                    }
+                }
+
+            System.Threading.Thread.Sleep(1000);
+            if (OpsiTerpilih.NilaiOpsi == true)
+            {
+                LabelResult.Text = "Jawaban kamu BENAR!";
+                //poinnambah
+            }
+            else
+            {
+                LabelResult.Text = "Jawaban kamu SALAH";
+            }
+
+        }
     }
 }

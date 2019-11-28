@@ -48,17 +48,13 @@ namespace GazethruApps
         public FormGame()
         {
             InitializeComponent();
-           // GetRandomRecords();
-           // GameStart();
+            GetRandomRecords();
+            GameStart();
         }
 
         private void FormGame_Load(object sender, EventArgs e)
         {
-            Instance = this;
 
-            UCGameOpsi GameOpsi = new UCGameOpsi();
-            GameOpsi.Dock = DockStyle.Fill;
-            PanelUC.Controls.Add(GameOpsi);
         }
 
         public List<int> GetRandomRecords()
@@ -98,22 +94,17 @@ namespace GazethruApps
 
         public void GameStart()
         {
-
+            // iterasi untuk random number selanjutnya
             var counter = 0;
             int cobala = randomRecords[counter];
 
-            //if (!PanelUC.Controls.Contains(UCGameOpsi.Instance))
-            //{
-            //    PanelUC.Controls.Add(UCGameOpsi.Instance);
-            //    UCGameOpsi.Instance.Dock = DockStyle.Fill;
-            //    UCGameOpsi.Instance.BringToFront();
-                UCGameOpsi GameOpsi = new UCGameOpsi();
-                GameOpsi.LoadOption(cobala);
-            //}
-            //else
-            //{
-            //    UCGameOpsi.Instance.BringToFront();
-            //}
+            Instance = this;
+
+            UCGameOpsi GameOpsi = new UCGameOpsi();
+            GameOpsi.Dock = DockStyle.Fill;
+            PanelUC.Controls.Add(GameOpsi);
+            GameOpsi.LoadOption(cobala);
+
 
             counter++;
         }
