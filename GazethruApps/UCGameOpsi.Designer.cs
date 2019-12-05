@@ -30,20 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PanelOpsi = new System.Windows.Forms.Panel();
+            this.TBKetKanan = new System.Windows.Forms.RichTextBox();
+            this.TBNamaKanan = new System.Windows.Forms.TextBox();
+            this.TBKetKiri = new System.Windows.Forms.RichTextBox();
+            this.TBNamaKiri = new System.Windows.Forms.TextBox();
             this.LabelResult = new System.Windows.Forms.Label();
             this.LabelCoba = new System.Windows.Forms.Label();
             this.PBOpsiKiri = new System.Windows.Forms.PictureBox();
             this.PBOpsiKanan = new System.Windows.Forms.PictureBox();
             this.TimerTombol = new System.Windows.Forms.Timer(this.components);
             this.LBSoalKe = new System.Windows.Forms.Label();
-            this.TBNamaKiri = new System.Windows.Forms.TextBox();
-            this.TBKetKiri = new System.Windows.Forms.RichTextBox();
-            this.TBNamaKanan = new System.Windows.Forms.TextBox();
-            this.TBKetKanan = new System.Windows.Forms.RichTextBox();
             this.TBQuest = new System.Windows.Forms.RichTextBox();
             this.LBTotalSoal = new System.Windows.Forms.Label();
             this.LBTotalPoin = new System.Windows.Forms.Label();
             this.LBPoinKe = new System.Windows.Forms.Label();
+            this.BTNClose = new System.Windows.Forms.Button();
             this.PanelOpsi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKiri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKanan)).BeginInit();
@@ -52,6 +53,7 @@
             // PanelOpsi
             // 
             this.PanelOpsi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PanelOpsi.Controls.Add(this.BTNClose);
             this.PanelOpsi.Controls.Add(this.TBKetKanan);
             this.PanelOpsi.Controls.Add(this.TBNamaKanan);
             this.PanelOpsi.Controls.Add(this.TBKetKiri);
@@ -65,6 +67,56 @@
             this.PanelOpsi.Name = "PanelOpsi";
             this.PanelOpsi.Size = new System.Drawing.Size(1904, 929);
             this.PanelOpsi.TabIndex = 0;
+            // 
+            // TBKetKanan
+            // 
+            this.TBKetKanan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TBKetKanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBKetKanan.Enabled = false;
+            this.TBKetKanan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBKetKanan.Location = new System.Drawing.Point(1284, 599);
+            this.TBKetKanan.Name = "TBKetKanan";
+            this.TBKetKanan.ReadOnly = true;
+            this.TBKetKanan.Size = new System.Drawing.Size(324, 96);
+            this.TBKetKanan.TabIndex = 6;
+            this.TBKetKanan.Text = "";
+            // 
+            // TBNamaKanan
+            // 
+            this.TBNamaKanan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TBNamaKanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBNamaKanan.Enabled = false;
+            this.TBNamaKanan.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNamaKanan.Location = new System.Drawing.Point(1307, 279);
+            this.TBNamaKanan.Name = "TBNamaKanan";
+            this.TBNamaKanan.ReadOnly = true;
+            this.TBNamaKanan.Size = new System.Drawing.Size(283, 24);
+            this.TBNamaKanan.TabIndex = 5;
+            // 
+            // TBKetKiri
+            // 
+            this.TBKetKiri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TBKetKiri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBKetKiri.Enabled = false;
+            this.TBKetKiri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBKetKiri.Location = new System.Drawing.Point(310, 599);
+            this.TBKetKiri.Name = "TBKetKiri";
+            this.TBKetKiri.ReadOnly = true;
+            this.TBKetKiri.Size = new System.Drawing.Size(324, 96);
+            this.TBKetKiri.TabIndex = 6;
+            this.TBKetKiri.Text = "";
+            // 
+            // TBNamaKiri
+            // 
+            this.TBNamaKiri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TBNamaKiri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBNamaKiri.Enabled = false;
+            this.TBNamaKiri.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBNamaKiri.Location = new System.Drawing.Point(333, 279);
+            this.TBNamaKiri.Name = "TBNamaKiri";
+            this.TBNamaKiri.ReadOnly = true;
+            this.TBNamaKiri.Size = new System.Drawing.Size(283, 24);
+            this.TBNamaKiri.TabIndex = 5;
             // 
             // LabelResult
             // 
@@ -119,56 +171,6 @@
             this.LBSoalKe.TabIndex = 6;
             this.LBSoalKe.Text = "0";
             // 
-            // TBNamaKiri
-            // 
-            this.TBNamaKiri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TBNamaKiri.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBNamaKiri.Enabled = false;
-            this.TBNamaKiri.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNamaKiri.Location = new System.Drawing.Point(333, 293);
-            this.TBNamaKiri.Name = "TBNamaKiri";
-            this.TBNamaKiri.ReadOnly = true;
-            this.TBNamaKiri.Size = new System.Drawing.Size(283, 24);
-            this.TBNamaKiri.TabIndex = 5;
-            // 
-            // TBKetKiri
-            // 
-            this.TBKetKiri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TBKetKiri.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBKetKiri.Enabled = false;
-            this.TBKetKiri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBKetKiri.Location = new System.Drawing.Point(310, 549);
-            this.TBKetKiri.Name = "TBKetKiri";
-            this.TBKetKiri.ReadOnly = true;
-            this.TBKetKiri.Size = new System.Drawing.Size(324, 96);
-            this.TBKetKiri.TabIndex = 6;
-            this.TBKetKiri.Text = "";
-            // 
-            // TBNamaKanan
-            // 
-            this.TBNamaKanan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TBNamaKanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBNamaKanan.Enabled = false;
-            this.TBNamaKanan.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNamaKanan.Location = new System.Drawing.Point(1307, 293);
-            this.TBNamaKanan.Name = "TBNamaKanan";
-            this.TBNamaKanan.ReadOnly = true;
-            this.TBNamaKanan.Size = new System.Drawing.Size(283, 24);
-            this.TBNamaKanan.TabIndex = 5;
-            // 
-            // TBKetKanan
-            // 
-            this.TBKetKanan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TBKetKanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBKetKanan.Enabled = false;
-            this.TBKetKanan.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBKetKanan.Location = new System.Drawing.Point(1284, 549);
-            this.TBKetKanan.Name = "TBKetKanan";
-            this.TBKetKanan.ReadOnly = true;
-            this.TBKetKanan.Size = new System.Drawing.Size(324, 96);
-            this.TBKetKanan.TabIndex = 6;
-            this.TBKetKanan.Text = "";
-            // 
             // TBQuest
             // 
             this.TBQuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -210,6 +212,17 @@
             this.LBPoinKe.TabIndex = 10;
             this.LBPoinKe.Text = "0";
             // 
+            // BTNClose
+            // 
+            this.BTNClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNClose.Location = new System.Drawing.Point(900, 877);
+            this.BTNClose.Name = "BTNClose";
+            this.BTNClose.Size = new System.Drawing.Size(75, 23);
+            this.BTNClose.TabIndex = 7;
+            this.BTNClose.Text = "Next";
+            this.BTNClose.UseVisualStyleBackColor = true;
+            this.BTNClose.Click += new System.EventHandler(this.BTNClose_Click);
+            // 
             // UCGameOpsi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,5 +262,6 @@
         private System.Windows.Forms.Label LBTotalSoal;
         private System.Windows.Forms.Label LBTotalPoin;
         private System.Windows.Forms.Label LBPoinKe;
+        private System.Windows.Forms.Button BTNClose;
     }
 }

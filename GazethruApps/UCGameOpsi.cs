@@ -26,6 +26,7 @@ namespace GazethruApps
         }
 
         string Question;
+        int NextUrut;
         public struct Option
         {
             public string NamaOpsi;
@@ -80,6 +81,16 @@ namespace GazethruApps
         {
             TimerTombol.Interval = 1;
             TimerTombol.Start();
+
+            foreach (Control textbox in PanelOpsi.Controls)
+                if (textbox is TextBox)
+                {
+                    textbox.Visible = false;
+                }
+               else if (textbox is  RichTextBox)
+                {
+                    textbox.Visible = false;
+                }
         }
 
         private void TimerTombol_Tick(object sender, EventArgs e)
@@ -113,8 +124,9 @@ namespace GazethruApps
             //kendaliuser.CekTombol();
         }
 
-        public void LoadOption (int GameSeq)
+        public void LoadOption (int GameSeq, int Urutan)
         {
+            NextUrut = Urutan + 1;
             con.Open();
             string SelectOption = "SELECT * FROM Game WHERE No = ";
             SqlCommand command = new SqlCommand(SelectOption + GameSeq, con);
@@ -138,7 +150,7 @@ namespace GazethruApps
                     OpsiR = new Option(namaR, imgR, descR, nilaiR);
 
                     LoadPict(imgL, imgR);
-
+                    TBQuest.Text = Question;
                     LabelCoba.Text = GameSeq.ToString();
                 }
             }
@@ -176,7 +188,7 @@ namespace GazethruApps
             return Opsi;
         }
 
-        private async void PBOpsiKiri_Click(object sender, EventArgs e)
+        private void PBOpsiKiri_Click(object sender, EventArgs e)
         {
             TimerTombol.Stop();
             
@@ -196,7 +208,7 @@ namespace GazethruApps
             PBOpsiKiri.Location = new Point(332, 315);
             PBOpsiKanan.Location = new Point(1403, 315);
 
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
             foreach (Control item in PanelOpsi.Controls)
                 if (item is PictureBox)
                 {
@@ -206,12 +218,11 @@ namespace GazethruApps
                     }
                     else
                     {
-                        //transparan
-                        item.Visible = false;
+                        item.Size = new Size(150, 150);
                     }
                 }
 
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
             if (OpsiTerpilih.NilaiOpsi == true)
             {
                 LabelResult.Text = "Jawaban kamu BENAR!";
@@ -222,6 +233,28 @@ namespace GazethruApps
                 LabelResult.Text = "Jawaban kamu SALAH";
             }
 
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
+            foreach (Control textbox in PanelOpsi.Controls)
+                if (textbox is TextBox)
+                {
+                    textbox.Visible = true;
+                }
+                else if (textbox is RichTextBox)
+                {
+                    textbox.Visible = true;
+                }
+
+            TBNamaKiri.Text = OpsiL.NamaOpsi;
+            TBKetKiri.Text = OpsiL.KetOpsi;
+            TBNamaKanan.Text = OpsiR.NamaOpsi;
+            TBKetKanan.Text = OpsiR.KetOpsi;
+
+        }
+
+        private void BTNClose_Click(object sender, EventArgs e)
+        {
+            FormGame.Instance.PnlUC.Controls["UCTimer"].BringToFront();
+            UCTimer.Instance.StartGame(NextUrut);
         }
     }
 }

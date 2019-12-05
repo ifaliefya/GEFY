@@ -235,6 +235,12 @@
     <Compile Include="UCGameOpsi.Designer.cs">
       <DependentUpon>UCGameOpsi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCTimer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCTimer.Designer.cs">
+      <DependentUpon>UCTimer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminAwal.resx">
       <DependentUpon>AdminAwal.cs</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +329,9 @@
     </Compile>
     <EmbeddedResource Include="UCGameOpsi.resx">
       <DependentUpon>UCGameOpsi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCTimer.resx">
+      <DependentUpon>UCTimer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

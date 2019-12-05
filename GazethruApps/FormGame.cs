@@ -14,7 +14,7 @@ namespace GazethruApps
 {
     public partial class FormGame : Form
     {
-        private static FormGame Instance;
+        public static FormGame Instance;
         public static FormGame getInstance()
         {
             if (Instance == null)
@@ -41,14 +41,13 @@ namespace GazethruApps
         {
             get { return PanelUC; }
             set { PanelUC = value; }
-
         }
 
 
         public FormGame()
         {
             InitializeComponent();
-            GetRandomRecords();
+            //GetRandomRecords();
             GameStart();
         }
 
@@ -94,19 +93,18 @@ namespace GazethruApps
 
         public void GameStart()
         {
-            // iterasi untuk random number selanjutnya
-            var counter = 0;
-            int cobala = randomRecords[counter];
-
             Instance = this;
 
-            UCGameOpsi GameOpsi = new UCGameOpsi();
-            GameOpsi.Dock = DockStyle.Fill;
-            PanelUC.Controls.Add(GameOpsi);
-            GameOpsi.LoadOption(cobala);
+            //UCGameOpsi GameOpsi = new UCGameOpsi();
+            //GameOpsi.Dock = DockStyle.Fill;
+            //PanelUC.Controls.Add(GameOpsi);
+            //GameOpsi.LoadOption(cobala);
 
-
-            counter++;
+            UCTimer Timer = new UCTimer();
+            Timer.Dock = DockStyle.Fill;
+            PanelUC.Controls.Add(Timer);
+            Timer.SetRandomSequence();
+            Timer.StartGame(1);
         }
 
 
