@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCGameOpsi));
             this.PanelOpsi = new System.Windows.Forms.Panel();
+            this.BTNClose = new System.Windows.Forms.Button();
             this.TBKetKanan = new System.Windows.Forms.RichTextBox();
             this.TBNamaKanan = new System.Windows.Forms.TextBox();
             this.TBKetKiri = new System.Windows.Forms.RichTextBox();
@@ -44,15 +46,16 @@
             this.LBTotalSoal = new System.Windows.Forms.Label();
             this.LBTotalPoin = new System.Windows.Forms.Label();
             this.LBPoinKe = new System.Windows.Forms.Label();
-            this.BTNClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.PanelOpsi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKiri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKanan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelOpsi
             // 
-            this.PanelOpsi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PanelOpsi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(144)))), ((int)(((byte)(65)))));
             this.PanelOpsi.Controls.Add(this.BTNClose);
             this.PanelOpsi.Controls.Add(this.TBKetKanan);
             this.PanelOpsi.Controls.Add(this.TBNamaKanan);
@@ -67,6 +70,18 @@
             this.PanelOpsi.Name = "PanelOpsi";
             this.PanelOpsi.Size = new System.Drawing.Size(1904, 929);
             this.PanelOpsi.TabIndex = 0;
+            this.PanelOpsi.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelOpsi_Paint);
+            // 
+            // BTNClose
+            // 
+            this.BTNClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNClose.Location = new System.Drawing.Point(900, 877);
+            this.BTNClose.Name = "BTNClose";
+            this.BTNClose.Size = new System.Drawing.Size(75, 23);
+            this.BTNClose.TabIndex = 7;
+            this.BTNClose.Text = "Next";
+            this.BTNClose.UseVisualStyleBackColor = true;
+            this.BTNClose.Click += new System.EventHandler(this.BTNClose_Click);
             // 
             // TBKetKanan
             // 
@@ -164,16 +179,16 @@
             // LBSoalKe
             // 
             this.LBSoalKe.AutoSize = true;
-            this.LBSoalKe.Font = new System.Drawing.Font("Nexa Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBSoalKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBSoalKe.Location = new System.Drawing.Point(85, 31);
             this.LBSoalKe.Name = "LBSoalKe";
-            this.LBSoalKe.Size = new System.Drawing.Size(23, 23);
+            this.LBSoalKe.Size = new System.Drawing.Size(21, 24);
             this.LBSoalKe.TabIndex = 6;
             this.LBSoalKe.Text = "0";
             // 
             // TBQuest
             // 
-            this.TBQuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.TBQuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(214)))), ((int)(((byte)(121)))));
             this.TBQuest.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TBQuest.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBQuest.Location = new System.Drawing.Point(700, 73);
@@ -185,48 +200,49 @@
             // LBTotalSoal
             // 
             this.LBTotalSoal.AutoSize = true;
-            this.LBTotalSoal.Font = new System.Drawing.Font("Nexa Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTotalSoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTotalSoal.Location = new System.Drawing.Point(114, 31);
             this.LBTotalSoal.Name = "LBTotalSoal";
-            this.LBTotalSoal.Size = new System.Drawing.Size(36, 23);
+            this.LBTotalSoal.Size = new System.Drawing.Size(33, 24);
             this.LBTotalSoal.TabIndex = 6;
             this.LBTotalSoal.Text = "/ 0";
             // 
             // LBTotalPoin
             // 
             this.LBTotalPoin.AutoSize = true;
-            this.LBTotalPoin.Font = new System.Drawing.Font("Nexa Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBTotalPoin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBTotalPoin.Location = new System.Drawing.Point(1802, 31);
             this.LBTotalPoin.Name = "LBTotalPoin";
-            this.LBTotalPoin.Size = new System.Drawing.Size(36, 23);
+            this.LBTotalPoin.Size = new System.Drawing.Size(33, 24);
             this.LBTotalPoin.TabIndex = 9;
             this.LBTotalPoin.Text = "/ 0";
             // 
             // LBPoinKe
             // 
             this.LBPoinKe.AutoSize = true;
-            this.LBPoinKe.Font = new System.Drawing.Font("Nexa Bold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBPoinKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBPoinKe.Location = new System.Drawing.Point(1773, 31);
             this.LBPoinKe.Name = "LBPoinKe";
-            this.LBPoinKe.Size = new System.Drawing.Size(23, 23);
+            this.LBPoinKe.Size = new System.Drawing.Size(21, 24);
             this.LBPoinKe.TabIndex = 10;
             this.LBPoinKe.Text = "0";
             // 
-            // BTNClose
+            // pictureBox1
             // 
-            this.BTNClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNClose.Location = new System.Drawing.Point(900, 877);
-            this.BTNClose.Name = "BTNClose";
-            this.BTNClose.Size = new System.Drawing.Size(75, 23);
-            this.BTNClose.TabIndex = 7;
-            this.BTNClose.Text = "Next";
-            this.BTNClose.UseVisualStyleBackColor = true;
-            this.BTNClose.Click += new System.EventHandler(this.BTNClose_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1703, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // UCGameOpsi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(243)))), ((int)(((byte)(220)))));
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LBTotalPoin);
             this.Controls.Add(this.LBPoinKe);
             this.Controls.Add(this.TBQuest);
@@ -240,6 +256,7 @@
             this.PanelOpsi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKiri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKanan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +280,6 @@
         private System.Windows.Forms.Label LBTotalPoin;
         private System.Windows.Forms.Label LBPoinKe;
         private System.Windows.Forms.Button BTNClose;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

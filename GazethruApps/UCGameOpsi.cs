@@ -256,5 +256,10 @@ namespace GazethruApps
             FormGame.Instance.PnlUC.Controls["UCTimer"].BringToFront();
             UCTimer.Instance.StartGame(NextUrut);
         }
+
+        private void PanelOpsi_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
