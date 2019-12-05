@@ -44,7 +44,7 @@ namespace GazethruApps
         int ukuranFilterMata = 30;
 
         double ThresholdJarak = 250;
-        double ThresholdKorelasi = 0.8;
+        double ThresholdKorelasi = 0.7;
 
         int DurasiJarakEuclidean = 100;
         int DurasiKorelasiPearson = 80;
@@ -286,21 +286,6 @@ namespace GazethruApps
                 
                 DaftarFungsi[i](e);                
             }
-        }
-
-        public void Close()
-        {
-            Host.Dispose();
-        }
-
-        public void NoLook()
-        {
-            for (int i = 0; i < DaftarTombol.Count; i++)
-            {
-                HasilKorelasiPearson[i] = 0;
-            }
-
-
-        }               
+        }        
     }
 }

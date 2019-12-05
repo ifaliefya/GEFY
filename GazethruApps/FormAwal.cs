@@ -118,12 +118,6 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (eawal.mataX == null || eawal.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (eawal.status)
             {
                 FormGame FormUser = FormGame.getInstance();

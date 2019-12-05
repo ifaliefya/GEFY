@@ -219,18 +219,11 @@ namespace GazethruApps
             {
                 PresenceCheck.Visible = true;
             }
-
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formInformasi FormInformasi = formInformasi.getInstance();
                 FormInformasi.Show();
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
 
@@ -238,17 +231,11 @@ namespace GazethruApps
         }
         private void HomeTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 formUser Home = formUser.getInstance();
                 Home.Show();
                 timer1.Stop();
-                kendali.Close();
                 this.Close();
             }
 
@@ -256,17 +243,10 @@ namespace GazethruApps
         }
         private void NextTekan(ArgumenKendaliTombol e)
         {
-            if (e.mataX == null || e.mataY == null)
-            {
-                kendali.NoLook();
-            }
-
             if (e.status)
             {
                 try
                 {
-                    kendali.Close();
-
                     ++counter;
                     nowShowing = ShowID[counter];
                     PopulateButton();
@@ -286,8 +266,6 @@ namespace GazethruApps
             {
                 try
                 {
-                    kendali.Close();
-
                     --counter;
                     nowShowing = ShowID[counter];
                     PopulateButton();
