@@ -46,7 +46,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +111,8 @@
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 14;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel2
@@ -215,19 +217,20 @@
             this.progressBar2.Size = new System.Drawing.Size(174, 5);
             this.progressBar2.TabIndex = 39;
             // 
-            // button1
+            // buttonInfo
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(218, 477);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 56);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Tahukah Kamu";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.buttonInfo.FlatAppearance.BorderSize = 0;
+            this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInfo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInfo.ForeColor = System.Drawing.Color.White;
+            this.buttonInfo.Location = new System.Drawing.Point(218, 477);
+            this.buttonInfo.Name = "buttonInfo";
+            this.buttonInfo.Size = new System.Drawing.Size(174, 56);
+            this.buttonInfo.TabIndex = 38;
+            this.buttonInfo.Text = "Tahukah Kamu";
+            this.buttonInfo.UseVisualStyleBackColor = false;
+            this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
             // 
             // formAwal
             // 
@@ -236,7 +239,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.progressBar2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonInfo);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.PresenceCheck);
             this.Controls.Add(this.pictureBox3);
@@ -277,7 +280,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonInfo;
     }
 }
 

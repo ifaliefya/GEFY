@@ -41,11 +41,16 @@ namespace GazethruApps
             wy = new List<double>();
             wx.Add(0);
             wy.Add(0);
+            wx.Add(0);
+            wy.Add(0);
 
-            wx[0] = 1150; //lokasi awal 900; 830
-            wy[0] = 900;
+            wx[0] = 1592; //lokasi awal 900; 830
+            wy[0] = 1000;
+            wx[1] = 218;
+            wy[1] = 477;
             
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
+            kendali.TambahTombol(buttonInfo, new FungsiTombol(TombolTahukahKamu));
 
             kendali.Start();
         }
@@ -84,25 +89,28 @@ namespace GazethruApps
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            buttonInfo.Location = new Point((int)wx[1], (int)wy[1]);
             btnUser.Location = new Point((int)wx[0], (int)wy[0]);
             progressBar1.Location = new Point((int)wx[0], (int)wy[0]);
 
             if (lap == 0) //titik awal
             {
-                wx[0]++;         
+                wy[0]--;
+                wy[1]++;         
             }
 
             if (lap == 1) //titik akhir, balik
             {
-                wx[0]--;
+                wy[0]++;
+                wy[1]--;
             }
 
-            if (wx[0] == 1450)
+            if (wy[0] == 477)
             {
                 lap = 1; //titik akhir
             }
 
-            if (wx[0] == 1150)
+            if (wy[0] == 1000)
             {
                 lap = 0;
             }
@@ -112,7 +120,7 @@ namespace GazethruApps
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
         {
 
-            Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
+            //Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
@@ -125,17 +133,27 @@ namespace GazethruApps
                 this.Hide();
                 timer1.Stop();
             }
-            
-            progressBar1.Value = eawal.DataKor;
+
+            //btnUser.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);     //untuk opacity
+            //progressBar1.Value = eawal.DataKor;                                //untuk progressbar
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
+        private void TombolTahukahKamu(ArgumenKendaliTombol eawal)
         {
-            FormGame FormUser = FormGame.getInstance();
-            FormUser.Show();
-            this.Hide();
-        }
+            if (eawal.CekMata)
+            {
+                PresenceCheck.Visible = true;
+            }
+            if (eawal.status)
+            {
+                FormGame FormUser = FormGame.getInstance();
+                FormUser.Show();
+                this.Hide();
+                timer1.Stop();
+            }
 
+            //buttonInfo.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);
+        }
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             AdminLogin LoginAdmin = new AdminLogin();
@@ -161,6 +179,16 @@ namespace GazethruApps
         {
             this.WindowState = FormWindowState.Minimized;
         }
-                      
+
+        private void buttonInfo_Click(object sender, EventArgs e)  //Button Tahukah Kamu
+        {
+
+        }
+        private void btnUser_Click(object sender, EventArgs e)     //Button Game
+        {
+            FormGame FormUser = FormGame.getInstance();
+            FormUser.Show();
+            this.Hide();
+        }
     }           
 }

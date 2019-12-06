@@ -116,6 +116,7 @@ namespace GazethruApps
         }
 
         int counter;
+
         public void StartGame (int urutan)
         {
             LblSoalKe.Text = urutan.ToString();
@@ -138,7 +139,7 @@ namespace GazethruApps
         }
 
         private void CountdownTimer_Tick(object sender, EventArgs e)
-        {
+        {            
             counter--;
             LblCountdown.Text = counter.ToString();
             if (counter == 0)

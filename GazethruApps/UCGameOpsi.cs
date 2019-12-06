@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Threading;
+using System.Diagnostics;
 
 namespace GazethruApps
 {
@@ -68,15 +70,36 @@ namespace GazethruApps
             wx[1] = 1351; //lokasi awal OpsiKanan
             wy[1] = 635;
 
-            //kendaliuser = new KendaliTombol();
-            //kendaliuser.TambahTombol(PBOpsiKiri, new FungsiTombol(PilihOpsiKiri));
-            //kendaliuser.TambahTombol(PBOpsiKanan, new FungsiTombol(PilihOpsiKanan));
+            kendaliuser = new KendaliTombol();
+            kendaliuser.TambahTombol(PBOpsiKiri, new FungsiTombol(PilihOpsiKiri));
+            kendaliuser.TambahTombol(PBOpsiKanan, new FungsiTombol(PilihOpsiKanan));
 
-            //kendaliuser.Start();
+            kendaliuser.Start();
 
         }
 
-        
+        //////////////Kendali Pake mata
+        private void PilihOpsiKanan(ArgumenKendaliTombol e)     
+        {
+            if (e.status)
+            {
+                TimerTombol.Stop();
+
+                OpsiTerpilih(PBOpsiKiri, OpsiL);
+            }
+            
+        }
+
+        private void PilihOpsiKiri(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                TimerTombol.Stop();
+
+                OpsiTerpilih(PBOpsiKanan, OpsiR);
+            }
+        }
+        //////////////Sampe sini kendali mata
         private void UCGameOpsi_Load(object sender, EventArgs e)
         {
             TimerTombol.Interval = 1;
@@ -88,9 +111,9 @@ namespace GazethruApps
                     textbox.Visible = false;
                 }
                else if (textbox is  RichTextBox)
-                {
+               {
                     textbox.Visible = false;
-                }
+               }
         }
 
         private void TimerTombol_Tick(object sender, EventArgs e)
@@ -121,7 +144,7 @@ namespace GazethruApps
                 lap = 0;
             }
 
-            //kendaliuser.CekTombol();
+            kendaliuser.CekTombol();
         }
 
         public void LoadOption (int GameSeq, int Urutan)
@@ -203,52 +226,74 @@ namespace GazethruApps
             OpsiTerpilih(PBOpsiKanan, OpsiR);
         }
 
+        public async void PopUpGambar(PictureBox PBOpsiTerpilih)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                if (i == 0) await Task.Delay(1000);
+                foreach (Control item in PanelOpsi.Controls)
+                    if (item is PictureBox)
+                    {
+                        if (item == PBOpsiTerpilih)
+                        {
+                            item.Size = new Size(250, 250);
+                        }
+                        else
+                        {
+                            item.Size = new Size(150, 150);
+                        }
+                    }
+            }
+            
+        }
+        public async void PopUpHasil(Option OpsiTerpilih)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                if (i == 0) await Task.Delay(3000);
+                if (OpsiTerpilih.NilaiOpsi == true)
+                {
+                    LabelResult.Text = "Jawaban kamu BENAR!";
+                    //poinnambah
+                }
+                else
+                {
+                    LabelResult.Text = "Jawaban kamu SALAH";
+                }
+            }
+           
+        }
+        public async void PopUpTextBox()
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                if (i == 0) await Task.Delay(8000);
+                foreach (Control textbox in PanelOpsi.Controls)
+                    if (textbox is TextBox)
+                    {
+                        textbox.Visible = true;
+                    }
+                    else if (textbox is RichTextBox)
+                    {
+                        textbox.Visible = true;
+                    }
+
+                TBNamaKiri.Text = OpsiL.NamaOpsi;
+                TBKetKiri.Text = OpsiL.KetOpsi;
+                TBNamaKanan.Text = OpsiR.NamaOpsi;
+                TBKetKanan.Text = OpsiR.KetOpsi;
+            }            
+        }
+
         public void OpsiTerpilih(PictureBox PBOpsiTerpilih, Option OpsiTerpilih)
         {
             PBOpsiKiri.Location = new Point(332, 315);
             PBOpsiKanan.Location = new Point(1403, 315);
 
-            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
-            foreach (Control item in PanelOpsi.Controls)
-                if (item is PictureBox)
-                {
-                    if (item == PBOpsiTerpilih)
-                    {
-                        item.Size = new Size(250, 250);
-                    }
-                    else
-                    {
-                        item.Size = new Size(150, 150);
-                    }
-                }
-
-            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2));
-            if (OpsiTerpilih.NilaiOpsi == true)
-            {
-                LabelResult.Text = "Jawaban kamu BENAR!";
-                //poinnambah
-            }
-            else
-            {
-                LabelResult.Text = "Jawaban kamu SALAH";
-            }
-
-            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
-            foreach (Control textbox in PanelOpsi.Controls)
-                if (textbox is TextBox)
-                {
-                    textbox.Visible = true;
-                }
-                else if (textbox is RichTextBox)
-                {
-                    textbox.Visible = true;
-                }
-
-            TBNamaKiri.Text = OpsiL.NamaOpsi;
-            TBKetKiri.Text = OpsiL.KetOpsi;
-            TBNamaKanan.Text = OpsiR.NamaOpsi;
-            TBKetKanan.Text = OpsiR.KetOpsi;
-
+            PopUpGambar(PBOpsiTerpilih);
+            PopUpHasil(OpsiTerpilih);
+            PopUpTextBox();
+                       
         }
 
         private void BTNClose_Click(object sender, EventArgs e)
