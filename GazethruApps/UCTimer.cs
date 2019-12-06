@@ -159,5 +159,10 @@ namespace GazethruApps
                 FormGame.Instance.PnlUC.Controls["UCGameOpsi"].BringToFront();
             }
         }
+
+        private void UCTimer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.Controls.Add(this.TBCoba);
             this.Name = "UCTimer";
             this.Size = new System.Drawing.Size(1904, 929);
+            this.Load += new System.EventHandler(this.UCTimer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

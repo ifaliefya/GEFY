@@ -55,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1920, 39);
+            this.panel1.Size = new System.Drawing.Size(1370, 39);
             this.panel1.TabIndex = 3;
             // 
             // label1
@@ -147,9 +147,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(186)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 1070);
+            this.panel2.Location = new System.Drawing.Point(0, 762);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1920, 10);
+            this.panel2.Size = new System.Drawing.Size(1370, 10);
             this.panel2.TabIndex = 28;
             // 
             // PresenceCheck
@@ -198,7 +198,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.progressBarHome);
             this.Controls.Add(this.progressBarTentang);
             this.Controls.Add(this.progressBarKegiatan);
