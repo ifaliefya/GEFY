@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Media;
 
 
 namespace GazethruApps
@@ -30,6 +31,8 @@ namespace GazethruApps
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         KendaliTombol kendali;
+
+        private SoundPlayer SelectSound = new SoundPlayer();
         public formAwal()
         {
             InitializeComponent();
@@ -186,9 +189,16 @@ namespace GazethruApps
         }
         private void btnUser_Click(object sender, EventArgs e)     //Button Game
         {
+            SFXSeleksi();
+
             FormGame FormUser = FormGame.getInstance();
             FormUser.Show();
             this.Hide();
+        }
+        private void SFXSeleksi()
+        {
+            this.SelectSound.SoundLocation = @"TombolTerpilih.wav";
+            this.SelectSound.Play();
         }
     }           
 }

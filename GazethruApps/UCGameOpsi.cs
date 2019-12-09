@@ -11,12 +11,19 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
+using System.Media;
 
 namespace GazethruApps
 {
     public partial class UCGameOpsi : UserControl
     {
         private static UCGameOpsi _instance;
+
+        private SoundPlayer SoundPilih = new SoundPlayer();
+        private SoundPlayer SoundBenar = new SoundPlayer();
+        private SoundPlayer SoundSalah = new SoundPlayer();
+        private SoundPlayer SoundKembali = new SoundPlayer();
+
         public static UCGameOpsi Instance
         {
             get
@@ -78,28 +85,32 @@ namespace GazethruApps
 
         }
 
-        //////////////Kendali Pake mata
-        private void PilihOpsiKanan(ArgumenKendaliTombol e)     
-        {
-            if (e.status)
-            {
-                TimerTombol.Stop();
-
-                OpsiTerpilih(PBOpsiKiri, OpsiL);
-            }
-            
-        }
-
+        //////////////   Kendali Pake mata    ////////////////////////////        
         private void PilihOpsiKiri(ArgumenKendaliTombol e)
         {
             if (e.status)
             {
+                SFXSeleksi();
+
+                TimerTombol.Stop();
+
+                OpsiTerpilih(PBOpsiKiri, OpsiL);
+            }
+        }
+        private void PilihOpsiKanan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                SFXSeleksi();
+
                 TimerTombol.Stop();
 
                 OpsiTerpilih(PBOpsiKanan, OpsiR);
             }
+
         }
-        //////////////Sampe sini kendali mata
+        //////////////    Sampe sini kendali mata   ////////////////////////////
+        
         private void UCGameOpsi_Load(object sender, EventArgs e)
         {
             TimerTombol.Interval = 1;
@@ -213,6 +224,8 @@ namespace GazethruApps
 
         private void PBOpsiKiri_Click(object sender, EventArgs e)
         {
+            SFXSeleksi();
+
             TimerTombol.Stop();
             
             OpsiTerpilih(PBOpsiKiri, OpsiL);
@@ -221,16 +234,40 @@ namespace GazethruApps
 
         private void PBOpsiKanan_Click(object sender, EventArgs e)
         {
+            SFXSeleksi();
+
             TimerTombol.Stop();
             
             OpsiTerpilih(PBOpsiKanan, OpsiR);
         }
+               
+
+        public void OpsiTerpilih(PictureBox PBOpsiTerpilih, Option OpsiTerpilih)
+        {            
+            PBOpsiKiri.Location = new Point(332, 315);
+            PBOpsiKanan.Location = new Point(1403, 315);
+            
+            PopUpGambar(PBOpsiTerpilih);
+            PopUpHasil(OpsiTerpilih);
+            PopUpTextBox();                       
+        }
+
+        private void BTNClose_Click(object sender, EventArgs e)
+        {
+            FormGame.Instance.PnlUC.Controls["UCTimer"].BringToFront();
+            UCTimer.Instance.StartGame(NextUrut);
+        }
+
+        private void PanelOpsi_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         public async void PopUpGambar(PictureBox PBOpsiTerpilih)
         {
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
-                if (i == 0) await Task.Delay(1000);
+                if (i == 0) await Task.Delay(1000);          //Delay 1 detik
                 foreach (Control item in PanelOpsi.Controls)
                     if (item is PictureBox)
                     {
@@ -244,13 +281,13 @@ namespace GazethruApps
                         }
                     }
             }
-            
+
         }
         public async void PopUpHasil(Option OpsiTerpilih)
         {
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
-                if (i == 0) await Task.Delay(3000);
+                if (i == 0) await Task.Delay(3000);          //Delay 2 detik setelah po up gambar
                 if (OpsiTerpilih.NilaiOpsi == true)
                 {
                     LabelResult.Text = "Jawaban kamu BENAR!";
@@ -261,13 +298,13 @@ namespace GazethruApps
                     LabelResult.Text = "Jawaban kamu SALAH";
                 }
             }
-           
+
         }
         public async void PopUpTextBox()
         {
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
-                if (i == 0) await Task.Delay(8000);
+                if (i == 0) await Task.Delay(8000);              //Delay 5 detik setelah pop up hasil
                 foreach (Control textbox in PanelOpsi.Controls)
                     if (textbox is TextBox)
                     {
@@ -282,29 +319,30 @@ namespace GazethruApps
                 TBKetKiri.Text = OpsiL.KetOpsi;
                 TBNamaKanan.Text = OpsiR.NamaOpsi;
                 TBKetKanan.Text = OpsiR.KetOpsi;
-            }            
+            }
         }
 
-        public void OpsiTerpilih(PictureBox PBOpsiTerpilih, Option OpsiTerpilih)
+        ////////////////  Bagian SFX   ///////////////////////
+        private void SFXSeleksi()
         {
-            PBOpsiKiri.Location = new Point(332, 315);
-            PBOpsiKanan.Location = new Point(1403, 315);
-
-            PopUpGambar(PBOpsiTerpilih);
-            PopUpHasil(OpsiTerpilih);
-            PopUpTextBox();
-                       
+            this.SoundPilih.SoundLocation = @"TombolTerpilih.wav";
+            this.SoundPilih.Play();
         }
-
-        private void BTNClose_Click(object sender, EventArgs e)
+        private void SFXBenar()
         {
-            FormGame.Instance.PnlUC.Controls["UCTimer"].BringToFront();
-            UCTimer.Instance.StartGame(NextUrut);
+            this.SoundBenar.SoundLocation = @"TombolBenar.wav";
+            this.SoundBenar.Play();
         }
-
-        private void PanelOpsi_Paint(object sender, PaintEventArgs e)
+        private void SFXSalah()
         {
-
+            this.SoundSalah.SoundLocation = @"TombolSalah.wav";
+            this.SoundSalah.Play();
         }
+        private void SFXBack()
+        {            
+            this.SoundKembali.SoundLocation = @"TombolKembali.wav";
+            this.SoundKembali.Play();            
+        }
+        ////////////////////////////////////////////
     }
 }

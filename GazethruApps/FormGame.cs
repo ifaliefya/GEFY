@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Media;
 
 namespace GazethruApps
 {
     public partial class FormGame : Form
     {
         public static FormGame Instance;
+
+        private SoundPlayer BGM = new SoundPlayer();
         public static FormGame getInstance()
         {
             if (Instance == null)
@@ -48,12 +51,12 @@ namespace GazethruApps
         {
             InitializeComponent();
             //GetRandomRecords();
-            GameStart();
+            GameStart();                       
         }
 
         private void FormGame_Load(object sender, EventArgs e)
         {
-
+            PlayBGMLoop();   //Play BG Music pake looping
         }
 
         public List<int> GetRandomRecords()
@@ -107,6 +110,18 @@ namespace GazethruApps
             Timer.StartGame(1);
         }
 
+        private void PlayBGMLoop()     // Play Background music
+        {
+            try
+            {
+                this.BGM.SoundLocation = @"BG Song Gefy.wav";
+                this.BGM.PlayLooping();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error playing sound");
+            }
+        }
 
     }
 }
