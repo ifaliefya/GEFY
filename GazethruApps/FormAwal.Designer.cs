@@ -119,9 +119,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 1070);
+            this.panel2.Location = new System.Drawing.Point(0, 762);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1920, 10);
+            this.panel2.Size = new System.Drawing.Size(1370, 10);
             this.panel2.TabIndex = 29;
             // 
             // buttonAdmin2
@@ -219,14 +219,16 @@
             // 
             // buttonInfo
             // 
-            this.buttonInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.buttonInfo.BackColor = System.Drawing.Color.Transparent;
+            this.buttonInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInfo.BackgroundImage")));
+            this.buttonInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonInfo.FlatAppearance.BorderSize = 0;
             this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInfo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonInfo.ForeColor = System.Drawing.Color.White;
             this.buttonInfo.Location = new System.Drawing.Point(218, 477);
             this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(174, 56);
+            this.buttonInfo.Size = new System.Drawing.Size(189, 113);
             this.buttonInfo.TabIndex = 38;
             this.buttonInfo.Text = "Tahukah Kamu";
             this.buttonInfo.UseVisualStyleBackColor = false;
@@ -237,7 +239,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.buttonInfo);
             this.Controls.Add(this.progressBar1);
@@ -251,6 +255,7 @@
             this.Controls.Add(this.btnUser);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formAwal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
