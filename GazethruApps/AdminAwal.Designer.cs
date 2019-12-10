@@ -64,7 +64,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 47);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(290, 725);
+            this.panel1.Size = new System.Drawing.Size(290, 1033);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -208,10 +208,10 @@
             // 
             this.panelUC.BackColor = System.Drawing.Color.White;
             this.panelUC.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelUC.Location = new System.Drawing.Point(290, -232);
+            this.panelUC.Location = new System.Drawing.Point(290, 76);
             this.panelUC.Margin = new System.Windows.Forms.Padding(2);
             this.panelUC.Name = "panelUC";
-            this.panelUC.Size = new System.Drawing.Size(1080, 1004);
+            this.panelUC.Size = new System.Drawing.Size(1630, 1004);
             this.panelUC.TabIndex = 2;
             // 
             // btnTutup
@@ -246,7 +246,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 47);
+            this.panel2.Size = new System.Drawing.Size(1920, 47);
             this.panel2.TabIndex = 36;
             // 
             // AdminAwal
@@ -254,7 +254,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panelUC);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

@@ -36,14 +36,14 @@
             this.PanelUC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelUC.Location = new System.Drawing.Point(0, 0);
             this.PanelUC.Name = "PanelUC";
-            this.PanelUC.Size = new System.Drawing.Size(1354, 733);
+            this.PanelUC.Size = new System.Drawing.Size(1904, 1041);
             this.PanelUC.TabIndex = 0;
             // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 733);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.PanelUC);
             this.Name = "FormGame";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
