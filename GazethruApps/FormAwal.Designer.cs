@@ -119,9 +119,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 762);
+            this.panel2.Location = new System.Drawing.Point(0, 1070);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 10);
+            this.panel2.Size = new System.Drawing.Size(1920, 10);
             this.panel2.TabIndex = 29;
             // 
             // buttonAdmin2
@@ -241,7 +241,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(23)))), ((int)(((byte)(46)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.buttonInfo);
             this.Controls.Add(this.progressBar1);
