@@ -80,6 +80,12 @@
     <Compile Include="AdminAwal.Designer.cs">
       <DependentUpon>AdminAwal.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminVideo.Designer.cs">
+      <DependentUpon>AdminVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="AdminAwal.resx">
       <DependentUpon>AdminAwal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminVideo.resx">
+      <DependentUpon>AdminVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGame.resx">
       <DependentUpon>AdminGame.cs</DependentUpon>

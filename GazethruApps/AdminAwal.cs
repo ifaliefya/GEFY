@@ -17,6 +17,20 @@ namespace GazethruApps
         public AdminAwal()
         {
             InitializeComponent();
+            Sidepanel.Height = btn_Video.Height;
+            Sidepanel.Top = btn_Video.Top;
+
+            if (!panelUC.Controls.Contains(AdminVideo.Instance))
+            {
+                panelUC.Controls.Add(AdminVideo.Instance);
+                AdminVideo.Instance.Dock = DockStyle.Fill;
+                AdminVideo.Instance.BringToFront();
+                AdminVideo Video = new AdminVideo();
+                Video.VideoList("");
+            }
+            else
+                AdminVideo.Instance.BringToFront();
+
             //Sidepanel.Height = btn_Slideshow.Height;
             //Sidepanel.Top = btn_Slideshow.Top;
             //if (!panelUC.Controls.Contains(AdminSlideshow.Instance))
@@ -31,94 +45,40 @@ namespace GazethruApps
             //    AdminSlideshow.Instance.BringToFront();
         }
 
-        private void btn_Slideshow_Click(object sender, EventArgs e)
+        private void btn_Video_Click(object sender, EventArgs e)
         {
-            Sidepanel.Height = btn_Slideshow.Height;
-            Sidepanel.Top = btn_Slideshow.Top;
-            //adminSlideshow1.BringToFront();
-            //AdminSlideshow Slideshow = new AdminSlideshow();
-            //Slideshow.SlideList("");
+            Sidepanel.Height = btn_Video.Height;
+            Sidepanel.Top = btn_Video.Top;
+
+            if (!panelUC.Controls.Contains(AdminVideo.Instance))
+            {
+                panelUC.Controls.Add(AdminVideo.Instance);
+                AdminVideo.Instance.Dock = DockStyle.Fill;
+                AdminVideo.Instance.BringToFront();
+                AdminVideo Video = new AdminVideo();
+                Video.VideoList("");
+            }
+            else
+                AdminVideo.Instance.BringToFront();
+        }
+
+        private void btn_Games_Click(object sender, EventArgs e)
+        {
+            Sidepanel.Height = btn_Games.Height;
+            Sidepanel.Top = btn_Games.Top;
+
             if (!panelUC.Controls.Contains(AdminGame.Instance))
             {
                 panelUC.Controls.Add(AdminGame.Instance);
                 AdminGame.Instance.Dock = DockStyle.Fill;
                 AdminGame.Instance.BringToFront();
-                //AdminGame Slideshow = new AdminGame();
-                //Slideshow.SlideList("");
+                AdminGame Games = new AdminGame();
+                Games.GameList("");
             }
             else
                 AdminGame.Instance.BringToFront();
         }
 
-        private void btn_Tentang_Click(object sender, EventArgs e)
-        {
-            Sidepanel.Height = btn_Tentang.Height;
-            Sidepanel.Top = btn_Tentang.Top;
-
-            //if (!panelUC.Controls.Contains(AdminInformasi.Instance)||Category!="Info")
-            //{
-            //    Category = "Info";
-            //    panelUC.Controls.Add(AdminInformasi.Instance);
-            //    AdminInformasi.Instance.Dock = DockStyle.Fill;
-            //    AdminInformasi.Instance.BringToFront();
-            //    AdminInformasi Tentang = new AdminInformasi();
-            //    Tentang.InfoContent("");
-            //}
-            //else
-            //    AdminInformasi.Instance.BringToFront();
-        }
-
-        private void btn_Prestasi_Click(object sender, EventArgs e)
-        {
-            Sidepanel.Height = btn_Prestasi.Height;
-            Sidepanel.Top = btn_Prestasi.Top;
-
-            //if (!panelUC.Controls.Contains(AdminPrestasi.Instance) || Category != "Prestasi")
-            //{
-            //    Category = "Prestasi";
-            //    panelUC.Controls.Add(AdminPrestasi.Instance);
-            //    AdminPrestasi.Instance.Dock = DockStyle.Fill;
-            //    AdminPrestasi.Instance.BringToFront();
-            //    AdminPrestasi Pres = new AdminPrestasi();
-            //    Pres.PrestasiContent("");
-            //}
-            //else
-            //    AdminPrestasi.Instance.BringToFront();
-        }
-
-        private void btn_Kegiatan_Click(object sender, EventArgs e)
-        {
-            Sidepanel.Height = btn_Kegiatan.Height;
-            Sidepanel.Top = btn_Kegiatan.Top;
-
-            //if (!panelUC.Controls.Contains(AdminKegiatan.Instance) || Category != "Kegiatan")
-            //{
-            //    Category = "Kegiatan";
-            //    panelUC.Controls.Add(AdminKegiatan.Instance);
-            //    AdminKegiatan.Instance.Dock = DockStyle.Fill;
-            //    AdminKegiatan.Instance.BringToFront();
-            //    AdminKegiatan Keg = new AdminKegiatan();
-            //    Keg.KegiatanContent("");
-            //}
-            //else
-            //    AdminKegiatan.Instance.BringToFront();
-        }
-
-        private void btn_Peta_Click(object sender, EventArgs e)
-        {
-            Sidepanel.Height = btn_Peta.Height;
-            Sidepanel.Top = btn_Peta.Top;
-
-            //if (!panelUC.Controls.Contains(AdminPetaAwal.Instance))
-            //{
-            //    panelUC.Controls.Add(AdminPetaAwal.Instance);
-            //    AdminPetaAwal.Instance.Dock = DockStyle.Fill;
-            //    AdminPetaAwal.Instance.BringToFront();
-            //    AdminPetaAwal Peta = new AdminPetaAwal();
-            //}
-            //else
-            //    AdminPetaAwal.Instance.BringToFront();
-        }
 
         private void btn_Password_Click(object sender, EventArgs e)
         {

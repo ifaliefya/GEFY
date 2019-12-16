@@ -34,11 +34,8 @@
             this.Home = new System.Windows.Forms.Button();
             this.Sidepanel = new System.Windows.Forms.Panel();
             this.btn_Password = new System.Windows.Forms.Button();
-            this.btn_Peta = new System.Windows.Forms.Button();
-            this.btn_Kegiatan = new System.Windows.Forms.Button();
-            this.btn_Prestasi = new System.Windows.Forms.Button();
-            this.btn_Tentang = new System.Windows.Forms.Button();
-            this.btn_Slideshow = new System.Windows.Forms.Button();
+            this.btn_Games = new System.Windows.Forms.Button();
+            this.btn_Video = new System.Windows.Forms.Button();
             this.panelUC = new System.Windows.Forms.Panel();
             this.btnTutup = new System.Windows.Forms.Button();
             this.btnMini = new System.Windows.Forms.Button();
@@ -55,11 +52,8 @@
             this.panel1.Controls.Add(this.Home);
             this.panel1.Controls.Add(this.Sidepanel);
             this.panel1.Controls.Add(this.btn_Password);
-            this.panel1.Controls.Add(this.btn_Peta);
-            this.panel1.Controls.Add(this.btn_Kegiatan);
-            this.panel1.Controls.Add(this.btn_Prestasi);
-            this.panel1.Controls.Add(this.btn_Tentang);
-            this.panel1.Controls.Add(this.btn_Slideshow);
+            this.panel1.Controls.Add(this.btn_Games);
+            this.panel1.Controls.Add(this.btn_Video);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 47);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -109,7 +103,7 @@
             this.btn_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Password.Image = ((System.Drawing.Image)(resources.GetObject("btn_Password.Image")));
             this.btn_Password.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Password.Location = new System.Drawing.Point(11, 592);
+            this.btn_Password.Location = new System.Drawing.Point(6, 403);
             this.btn_Password.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Password.Name = "btn_Password";
             this.btn_Password.Size = new System.Drawing.Size(282, 63);
@@ -119,90 +113,39 @@
             this.btn_Password.UseVisualStyleBackColor = true;
             this.btn_Password.Click += new System.EventHandler(this.btn_Password_Click);
             // 
-            // btn_Peta
+            // btn_Games
             // 
-            this.btn_Peta.FlatAppearance.BorderSize = 0;
-            this.btn_Peta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Peta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Peta.Image = ((System.Drawing.Image)(resources.GetObject("btn_Peta.Image")));
-            this.btn_Peta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Peta.Location = new System.Drawing.Point(11, 525);
-            this.btn_Peta.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Peta.Name = "btn_Peta";
-            this.btn_Peta.Size = new System.Drawing.Size(282, 63);
-            this.btn_Peta.TabIndex = 0;
-            this.btn_Peta.Text = "   Peta";
-            this.btn_Peta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Peta.UseVisualStyleBackColor = true;
-            this.btn_Peta.Click += new System.EventHandler(this.btn_Peta_Click);
+            this.btn_Games.FlatAppearance.BorderSize = 0;
+            this.btn_Games.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Games.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Games.Image = ((System.Drawing.Image)(resources.GetObject("btn_Games.Image")));
+            this.btn_Games.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Games.Location = new System.Drawing.Point(8, 336);
+            this.btn_Games.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Games.Name = "btn_Games";
+            this.btn_Games.Size = new System.Drawing.Size(282, 63);
+            this.btn_Games.TabIndex = 0;
+            this.btn_Games.Text = "   Permainan";
+            this.btn_Games.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Games.UseVisualStyleBackColor = true;
+            this.btn_Games.Click += new System.EventHandler(this.btn_Games_Click);
             // 
-            // btn_Kegiatan
+            // btn_Video
             // 
-            this.btn_Kegiatan.FlatAppearance.BorderSize = 0;
-            this.btn_Kegiatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Kegiatan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Kegiatan.Image = ((System.Drawing.Image)(resources.GetObject("btn_Kegiatan.Image")));
-            this.btn_Kegiatan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Kegiatan.Location = new System.Drawing.Point(8, 462);
-            this.btn_Kegiatan.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Kegiatan.Name = "btn_Kegiatan";
-            this.btn_Kegiatan.Size = new System.Drawing.Size(282, 63);
-            this.btn_Kegiatan.TabIndex = 0;
-            this.btn_Kegiatan.Text = "   Kegiatan";
-            this.btn_Kegiatan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Kegiatan.UseVisualStyleBackColor = true;
-            this.btn_Kegiatan.Click += new System.EventHandler(this.btn_Kegiatan_Click);
-            // 
-            // btn_Prestasi
-            // 
-            this.btn_Prestasi.FlatAppearance.BorderSize = 0;
-            this.btn_Prestasi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Prestasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Prestasi.Image = ((System.Drawing.Image)(resources.GetObject("btn_Prestasi.Image")));
-            this.btn_Prestasi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Prestasi.Location = new System.Drawing.Point(8, 399);
-            this.btn_Prestasi.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Prestasi.Name = "btn_Prestasi";
-            this.btn_Prestasi.Size = new System.Drawing.Size(282, 63);
-            this.btn_Prestasi.TabIndex = 0;
-            this.btn_Prestasi.Text = "   Prestasi";
-            this.btn_Prestasi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Prestasi.UseVisualStyleBackColor = true;
-            this.btn_Prestasi.Click += new System.EventHandler(this.btn_Prestasi_Click);
-            // 
-            // btn_Tentang
-            // 
-            this.btn_Tentang.FlatAppearance.BorderSize = 0;
-            this.btn_Tentang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Tentang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tentang.Image = ((System.Drawing.Image)(resources.GetObject("btn_Tentang.Image")));
-            this.btn_Tentang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Tentang.Location = new System.Drawing.Point(8, 336);
-            this.btn_Tentang.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Tentang.Name = "btn_Tentang";
-            this.btn_Tentang.Size = new System.Drawing.Size(282, 63);
-            this.btn_Tentang.TabIndex = 0;
-            this.btn_Tentang.Text = "   Tentang DTETI";
-            this.btn_Tentang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Tentang.UseVisualStyleBackColor = true;
-            this.btn_Tentang.Click += new System.EventHandler(this.btn_Tentang_Click);
-            // 
-            // btn_Slideshow
-            // 
-            this.btn_Slideshow.FlatAppearance.BorderSize = 0;
-            this.btn_Slideshow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Slideshow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Slideshow.Image = ((System.Drawing.Image)(resources.GetObject("btn_Slideshow.Image")));
-            this.btn_Slideshow.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Slideshow.Location = new System.Drawing.Point(8, 273);
-            this.btn_Slideshow.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Slideshow.Name = "btn_Slideshow";
-            this.btn_Slideshow.Size = new System.Drawing.Size(282, 63);
-            this.btn_Slideshow.TabIndex = 0;
-            this.btn_Slideshow.Text = "   Permainan";
-            this.btn_Slideshow.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Slideshow.UseVisualStyleBackColor = true;
-            this.btn_Slideshow.Click += new System.EventHandler(this.btn_Slideshow_Click);
+            this.btn_Video.FlatAppearance.BorderSize = 0;
+            this.btn_Video.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Video.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Video.Image = ((System.Drawing.Image)(resources.GetObject("btn_Video.Image")));
+            this.btn_Video.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Video.Location = new System.Drawing.Point(8, 273);
+            this.btn_Video.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Video.Name = "btn_Video";
+            this.btn_Video.Size = new System.Drawing.Size(282, 63);
+            this.btn_Video.TabIndex = 0;
+            this.btn_Video.Text = "   Video";
+            this.btn_Video.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Video.UseVisualStyleBackColor = true;
+            this.btn_Video.Click += new System.EventHandler(this.btn_Video_Click);
             // 
             // panelUC
             // 
@@ -273,12 +216,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_Tentang;
-        private System.Windows.Forms.Button btn_Slideshow;
+        private System.Windows.Forms.Button btn_Games;
+        private System.Windows.Forms.Button btn_Video;
         private System.Windows.Forms.Panel Sidepanel;
-        private System.Windows.Forms.Button btn_Peta;
-        private System.Windows.Forms.Button btn_Kegiatan;
-        private System.Windows.Forms.Button btn_Prestasi;
         private System.Windows.Forms.Panel panelUC;
         private System.Windows.Forms.Button Home;
         private System.Windows.Forms.Button btnTutup;

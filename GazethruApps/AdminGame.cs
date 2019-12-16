@@ -269,7 +269,7 @@ namespace GazethruApps
                     command.Parameters.Add("@gambarl", SqlDbType.Image).Value = GetPic(PicBoxGambarL, PicBoxGambarL.Image);
                     command.Parameters.Add("@gambarr", SqlDbType.Image).Value = GetPic(PicBoxGambarR, PicBoxGambarR.Image);
                 }
-                ExecMyQuery(command, "Konten Gambar Ditambahkan");
+                ExecMyQuery(command, "Konten Games Ditambahkan");
             }
             else
             {
@@ -295,7 +295,7 @@ namespace GazethruApps
                     command.Parameters.Add("@gambarl", SqlDbType.Image).Value = GetPic(PicBoxGambarL, PicBoxGambarL.Image);
                     command.Parameters.Add("@gambarr", SqlDbType.Image).Value = GetPic(PicBoxGambarR, PicBoxGambarR.Image);
                 }
-                ExecMyQuery(command, "Konten Gambar Diperbarui");
+                ExecMyQuery(command, "Konten Games Diperbarui");
             }
         }
 
