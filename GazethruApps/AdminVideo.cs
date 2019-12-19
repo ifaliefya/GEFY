@@ -195,7 +195,7 @@ namespace GazethruApps
                 }
 
                 TbxJudul.Text = (String)(read["Judul"]);
-                TbxPath.Text = (String)(read["Path"].ToString());
+                TbxPath.Text = (String)(read["Path"]);
                 TbxKet.Text = (String)(read["Ket"]);
             }
             else
@@ -230,7 +230,7 @@ namespace GazethruApps
                 SqlCommand command = new SqlCommand(InsertQuery, con);
 
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = TbxJudul.Text;
-                command.Parameters.Add("@path", SqlDbType.VarBinary).Value = File.ReadAllBytes(TbxPath.Text);
+                command.Parameters.Add("@path", SqlDbType.VarChar).Value = TbxPath.Text;
                 command.Parameters.Add("@ket", SqlDbType.VarChar).Value = TbxKet.Text;
 
                 if (PbxThumbnail.Image == null )
@@ -250,7 +250,7 @@ namespace GazethruApps
                 SqlCommand command = new SqlCommand(UpdateQuery, con);
 
                 command.Parameters.Add("@judul", SqlDbType.VarChar).Value = TbxJudul.Text;
-                command.Parameters.Add("@path", SqlDbType.VarBinary).Value = File.ReadAllBytes(TbxPath.Text);
+                command.Parameters.Add("@path", SqlDbType.VarChar).Value = TbxPath.Text;
                 command.Parameters.Add("@ket", SqlDbType.VarChar).Value = TbxKet.Text;
 
                 if (PbxThumbnail.Image == null)

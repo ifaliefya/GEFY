@@ -26,8 +26,8 @@ namespace GazethruApps.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"F:\\GEFY\\Database Baru\\GefyDB" +
-            ".mdf\";Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\Kuliah\\Skripsi\\07GEFY\\Gefy" +
+            "DB.mdf;Integrated Security=True")]
         public string sqlcon {
             get {
                 return ((string)(this["sqlcon"]));
