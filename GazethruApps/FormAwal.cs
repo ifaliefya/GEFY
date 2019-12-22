@@ -185,8 +185,10 @@ namespace GazethruApps
 
         private void buttonInfo_Click(object sender, EventArgs e)  //Button Tahukah Kamu
         {
-
+            FormVideo FormVideo = new FormVideo();
+            FormVideo.Show();
         }
+
         private void btnUser_Click(object sender, EventArgs e)     //Button Game
         {
             SFXSeleksi();

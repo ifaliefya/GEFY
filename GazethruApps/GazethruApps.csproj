@@ -214,6 +214,12 @@
     <Compile Include="FormPeta.Designer.cs">
       <DependentUpon>FormPeta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPlayVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlayVideo.Designer.cs">
+      <DependentUpon>FormPlayVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPrestasi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,12 @@
     </Compile>
     <Compile Include="FormUser.Designer.cs">
       <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVideo.Designer.cs">
+      <DependentUpon>FormVideo.cs</DependentUpon>
     </Compile>
     <Compile Include="KendaliTombol.cs" />
     <Compile Include="Program.cs" />
@@ -317,6 +329,9 @@
     <EmbeddedResource Include="FormPeta.resx">
       <DependentUpon>FormPeta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPlayVideo.resx">
+      <DependentUpon>FormPlayVideo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrestasi.resx">
       <DependentUpon>FormPrestasi.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVideo.resx">
+      <DependentUpon>FormVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
