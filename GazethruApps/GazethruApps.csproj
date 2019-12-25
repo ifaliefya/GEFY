@@ -226,11 +226,23 @@
     <Compile Include="FormPrestasi.Designer.cs">
       <DependentUpon>FormPrestasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStartGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStartGame.Designer.cs">
+      <DependentUpon>FormStartGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTentang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTentang.Designer.cs">
       <DependentUpon>FormTentang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTutorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTutorial.Designer.cs">
+      <DependentUpon>FormTutorial.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
@@ -335,8 +347,14 @@
     <EmbeddedResource Include="FormPrestasi.resx">
       <DependentUpon>FormPrestasi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormStartGame.resx">
+      <DependentUpon>FormStartGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTentang.resx">
       <DependentUpon>FormTentang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTutorial.resx">
+      <DependentUpon>FormTutorial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>

@@ -193,7 +193,8 @@ namespace GazethruApps
         {
             SFXSeleksi();
 
-            FormGame FormUser = FormGame.getInstance();
+            //FormGame FormUser = FormGame.getInstance();
+            FormTutorial FormUser = new FormTutorial();
             FormUser.Show();
             this.Hide();
         }

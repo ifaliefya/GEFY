@@ -23,6 +23,7 @@ namespace GazethruApps
                 return _instance;
             }
         }
+
         List<int> GameSequence = new List<int>();
         int Max;
         int Sequence;
@@ -133,22 +134,23 @@ namespace GazethruApps
                     OnPlay = read.GetInt32(0);
                 }
             }
+            con.Close();
             counter = 3;
-            CountdownTimer.Start();
-            LblCountdown.Text = counter.ToString();
+            //Reset(CountdownTimer);
+            //CountdownTimer.Start();
+            //LblCountdown.Text = counter.ToString();
+            CountdownTimer.Enabled = true;
+            CountdownTimer.Tick += new EventHandler(CountdownTimer_Tick);
+
         }
 
         private void CountdownTimer_Tick(object sender, EventArgs e)
         {            
             counter--;
-            LblCountdown.Text = counter.ToString();
-            if (counter == 0)
-            {
-                LblCountdown.Text = "Mulai";
-            }
-            else if (counter < 0)
+            if (counter == -1)
             {
                 CountdownTimer.Stop();
+                CountdownTimer.Tick -= CountdownTimer_Tick;
                 if (!FormGame.Instance.PnlUC.Controls.ContainsKey("UCGameOpsi"))
                 {
                     UCGameOpsi GameOpsi = new UCGameOpsi();
@@ -158,7 +160,18 @@ namespace GazethruApps
                 }
                 FormGame.Instance.PnlUC.Controls["UCGameOpsi"].BringToFront();
             }
+            LblCountdown.Text = counter.ToString();
+            if (counter == 0)
+            {
+                LblCountdown.Text = "Mulai";
+            }
         }
+
+        //public static void Reset(this Timer timer)
+        //{
+        //    timer.Stop();
+        //    timer.Start();
+        //}
 
         private void UCTimer_Load(object sender, EventArgs e)
         {

@@ -1,41 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
-using System.Threading;
-using System.Diagnostics;
 using System.Media;
 
 namespace GazethruApps
 {
-    public partial class UCGameOpsi : UserControl
+    public partial class FormStartGame : Form
     {
-        private static UCGameOpsi _instance;
-
         private SoundPlayer SoundPilih = new SoundPlayer();
         private SoundPlayer SoundBenar = new SoundPlayer();
         private SoundPlayer SoundSalah = new SoundPlayer();
         private SoundPlayer SoundKembali = new SoundPlayer();
 
-        public static UCGameOpsi Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = new UCGameOpsi();
-                return _instance;
-            }
-        }
-
-        string Question;
+        private int counter;
+        private int Sequence;
+        private int GameID;
         int NextUrut;
+        string Question;
         public struct Option
         {
             public string NamaOpsi;
@@ -62,7 +51,7 @@ namespace GazethruApps
 
         KendaliTombol kendaliuser;
 
-        public UCGameOpsi()
+        public FormStartGame()
         {
             InitializeComponent();
             wx = new List<double>();
@@ -82,7 +71,6 @@ namespace GazethruApps
             kendaliuser.TambahTombol(PBOpsiKanan, new FungsiTombol(PilihOpsiKanan));
 
             kendaliuser.Start();
-
         }
 
         //////////////   Kendali Pake mata    ////////////////////////////        
@@ -92,7 +80,8 @@ namespace GazethruApps
             {
                 SFXSeleksi();
 
-                TimerTombol.Stop();
+                TombolTimer.Stop();
+                TombolTimer.Tick -= TombolTimer_Tick;
 
                 OpsiTerpilih(PBOpsiKiri, OpsiL);
             }
@@ -103,31 +92,25 @@ namespace GazethruApps
             {
                 SFXSeleksi();
 
-                TimerTombol.Stop();
+                TombolTimer.Stop();
+                TombolTimer.Tick -= TombolTimer_Tick;
 
                 OpsiTerpilih(PBOpsiKanan, OpsiR);
             }
 
         }
         //////////////    Sampe sini kendali mata   ////////////////////////////
-        
-        private void UCGameOpsi_Load(object sender, EventArgs e)
+        ///
+        private void FormStartGame_Load(object sender, EventArgs e)
         {
-            TimerTombol.Interval = 1;
-            TimerTombol.Start();
-
-            foreach (Control textbox in PanelOpsi.Controls)
-                if (textbox is TextBox)
-                {
-                    textbox.Visible = false;
-                }
-               else if (textbox is  RichTextBox)
-               {
-                    textbox.Visible = false;
-               }
+            PnlTimer.Visible = true;
+            PnlGame.Visible = false;
+            counter = 3;
+            LblTimer.Text = counter.ToString(); 
+            StartTimer(1);
         }
 
-        private void TimerTombol_Tick(object sender, EventArgs e)
+        private void TombolTimer_Tick(object sender, EventArgs e)
         {
             PBOpsiKiri.Location = new Point((int)wx[0], (int)wy[0]);
             PBOpsiKanan.Location = new Point((int)wx[1], (int)wy[1]);
@@ -158,9 +141,57 @@ namespace GazethruApps
             kendaliuser.CekTombol();
         }
 
-        public void LoadOption (int GameSeq, int Urutan)
+        private void CountdownTimer_Tick(object sender, EventArgs e)
         {
-            NextUrut = Urutan + 1;
+            counter--;
+            if (counter== -1)
+            {
+                CountdownTimer.Stop();
+                counter = 3;
+                StartGame(GameID, Sequence);
+                this.Controls.Remove(this.PnlTimer);
+                CountdownTimer.Tick -= CountdownTimer_Tick;
+            }
+            LblTimer.Text = counter.ToString();
+            if (counter == 0)
+            {
+                LblTimer.Text = "Mulai";
+            }
+        }
+
+       public void StartTimer(int urutan)
+        {
+            this.Controls.Add(this.PnlTimer);
+            PnlTimer.Visible = true;
+            PnlGame.Visible = false;
+            ResetGame();
+            LblNextSoal.Text = urutan.ToString();
+            Sequence = urutan;
+
+            con.Open();
+            string SelectQuery = "SELECT GameSeq FROM Sequence WHERE Id =" + urutan;
+            SqlCommand comm = new SqlCommand(SelectQuery, con);
+            SqlDataReader read = comm.ExecuteReader();
+            if (read.HasRows)
+            {
+                while (read.Read())
+                {
+                    GameID = read.GetInt32(0);
+                }
+            }
+            con.Close();
+            
+            CountdownTimer.Interval = 1000;
+            CountdownTimer.Enabled = true;
+            CountdownTimer.Tick += new EventHandler(CountdownTimer_Tick);
+        }
+
+        public void StartGame(int GameSeq, int urutan)
+        {
+            PnlGame.Visible = true;
+            PnlTimer.Visible = false;
+
+            NextUrut = urutan + 1;
             con.Open();
             string SelectOption = "SELECT * FROM Game WHERE No = ";
             SqlCommand command = new SqlCommand(SelectOption + GameSeq, con);
@@ -173,13 +204,13 @@ namespace GazethruApps
 
                     var namaL = (String)(read["NamaL"]);
                     var descL = (String)(read["DescL"]);
-                    var nilaiL= (Boolean)(read["NilaiL"]);
+                    var nilaiL = (Boolean)(read["NilaiL"]);
                     Byte[] imgL = (Byte[])(read["GambarL"]);
                     OpsiL = new Option(namaL, imgL, descL, nilaiL);
 
                     var namaR = (String)(read["NamaR"]);
                     var descR = (String)(read["DescR"]);
-                    var nilaiR= (Boolean)(read["NilaiR"]);
+                    var nilaiR = (Boolean)(read["NilaiR"]);
                     Byte[] imgR = (Byte[])(read["GambarR"]);
                     OpsiR = new Option(namaR, imgR, descR, nilaiR);
 
@@ -189,9 +220,10 @@ namespace GazethruApps
                 }
             }
             con.Close();
+            TombolTimer.Tick += new EventHandler(TombolTimer_Tick);
         }
-        
-        public void LoadPict (Byte[] img1, Byte[] img2)
+
+        public void LoadPict(Byte[] img1, Byte[] img2)
         {
             MemoryStream ms1 = new MemoryStream(img1);
             PBOpsiKiri.Image = Image.FromStream(ms1);
@@ -200,67 +232,51 @@ namespace GazethruApps
             PBOpsiKanan.Image = Image.FromStream(ms2);
         }
 
-        //PictureBox AddOpsi (bool Kiri, Byte[] img)
-        //{
-        //    PictureBox Opsi = new PictureBox();
-        //    Opsi.Size = new Size(200, 200);
-        //    Opsi.SizeMode = PictureBoxSizeMode.Zoom;
-        //    MemoryStream ms = new MemoryStream(img);
-        //    Opsi.Image = Image.FromStream(ms);
-        //    Opsi.BackColor = Color.Transparent;
-
-        //    if (Kiri == true)
-        //    {
-        //        Opsi.Name = "OpsiKiri"; 
-        //        Opsi.Location = new Point(332, 87);
-        //    }
-        //    else
-        //    {
-        //        Opsi.Name = "OpsiKanan";
-        //        Opsi.Location = new Point(1403, 642);
-        //    }
-        //    return Opsi;
-        //}
+        void ResetGame ()
+        {
+            PBOpsiKiri.Location = new Point(372,87);
+            PBOpsiKanan.Location = new Point(1351, 635);
+            foreach (Control textbox in PnlGame.Controls)
+                if (textbox is TextBox)
+                {
+                    textbox.Visible = false;
+                }
+                else if (textbox is RichTextBox)
+                {
+                    textbox.Visible = false;
+                }
+        }
 
         private void PBOpsiKiri_Click(object sender, EventArgs e)
         {
             SFXSeleksi();
 
-            TimerTombol.Stop();
-            
+            TombolTimer.Stop();
+            TombolTimer.Tick -= TombolTimer_Tick;
+
             OpsiTerpilih(PBOpsiKiri, OpsiL);
-           
+
         }
 
         private void PBOpsiKanan_Click(object sender, EventArgs e)
         {
             SFXSeleksi();
 
-            TimerTombol.Stop();
-            
+            TombolTimer.Stop();
+            TombolTimer.Tick -= TombolTimer_Tick;
+
             OpsiTerpilih(PBOpsiKanan, OpsiR);
         }
-               
 
         public void OpsiTerpilih(PictureBox PBOpsiTerpilih, Option OpsiTerpilih)
-        {            
+        {
             PBOpsiKiri.Location = new Point(332, 315);
             PBOpsiKanan.Location = new Point(1403, 315);
-            
+
             PopUpGambar(PBOpsiTerpilih);
             PopUpHasil(OpsiTerpilih);
-            PopUpTextBox();                       
-        }
-
-        private void BTNClose_Click(object sender, EventArgs e)
-        {
-            FormGame.Instance.PnlUC.Controls["UCTimer"].BringToFront();
-            UCTimer.Instance.StartGame(NextUrut);
-        }
-
-        private void PanelOpsi_Paint(object sender, PaintEventArgs e)
-        {
-
+            PopUpTextBox();
+            //StartTimer(NextUrut);
         }
 
         public async void PopUpGambar(PictureBox PBOpsiTerpilih)
@@ -268,7 +284,7 @@ namespace GazethruApps
             for (int i = 0; i < 3; i++)
             {
                 if (i == 0) await Task.Delay(1000);          //Delay 1 detik
-                foreach (Control item in PanelOpsi.Controls)
+                foreach (Control item in PnlGame.Controls)
                     if (item is PictureBox)
                     {
                         if (item == PBOpsiTerpilih)
@@ -290,12 +306,12 @@ namespace GazethruApps
                 if (i == 0) await Task.Delay(3000);          //Delay 2 detik setelah po up gambar
                 if (OpsiTerpilih.NilaiOpsi == true)
                 {
-                    LabelResult.Text = "Jawaban kamu BENAR!";
+                    TbxResult.Text = "Jawaban kamu BENAR!";
                     //poinnambah
                 }
                 else
                 {
-                    LabelResult.Text = "Jawaban kamu SALAH";
+                    TbxResult.Text = "Jawaban kamu SALAH";
                 }
             }
 
@@ -304,8 +320,8 @@ namespace GazethruApps
         {
             for (int i = 0; i < 3; i++)
             {
-                if (i == 0) await Task.Delay(8000);              //Delay 5 detik setelah pop up hasil
-                foreach (Control textbox in PanelOpsi.Controls)
+                if (i == 0) await Task.Delay(3000);              //Delay 5 detik setelah pop up hasil
+                foreach (Control textbox in PnlGame.Controls)
                     if (textbox is TextBox)
                     {
                         textbox.Visible = true;
@@ -339,10 +355,13 @@ namespace GazethruApps
             this.SoundSalah.Play();
         }
         private void SFXBack()
-        {            
+        {
             this.SoundKembali.SoundLocation = @"TombolKembali.wav";
-            this.SoundKembali.Play();            
+            this.SoundKembali.Play();
         }
+
+
+
         ////////////////////////////////////////////
     }
 }

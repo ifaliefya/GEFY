@@ -41,12 +41,12 @@
             this.PBOpsiKiri = new System.Windows.Forms.PictureBox();
             this.PBOpsiKanan = new System.Windows.Forms.PictureBox();
             this.TimerTombol = new System.Windows.Forms.Timer(this.components);
-            this.LBSoalKe = new System.Windows.Forms.Label();
             this.TBQuest = new System.Windows.Forms.RichTextBox();
             this.LBTotalSoal = new System.Windows.Forms.Label();
             this.LBTotalPoin = new System.Windows.Forms.Label();
             this.LBPoinKe = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LBSoalKe = new System.Windows.Forms.Label();
             this.PanelOpsi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKiri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKanan)).BeginInit();
@@ -176,16 +176,6 @@
             // 
             this.TimerTombol.Tick += new System.EventHandler(this.TimerTombol_Tick);
             // 
-            // LBSoalKe
-            // 
-            this.LBSoalKe.AutoSize = true;
-            this.LBSoalKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBSoalKe.Location = new System.Drawing.Point(85, 31);
-            this.LBSoalKe.Name = "LBSoalKe";
-            this.LBSoalKe.Size = new System.Drawing.Size(21, 24);
-            this.LBSoalKe.TabIndex = 6;
-            this.LBSoalKe.Text = "0";
-            // 
             // TBQuest
             // 
             this.TBQuest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(214)))), ((int)(((byte)(121)))));
@@ -237,6 +227,16 @@
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
+            // LBSoalKe
+            // 
+            this.LBSoalKe.AutoSize = true;
+            this.LBSoalKe.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBSoalKe.Location = new System.Drawing.Point(85, 31);
+            this.LBSoalKe.Name = "LBSoalKe";
+            this.LBSoalKe.Size = new System.Drawing.Size(21, 24);
+            this.LBSoalKe.TabIndex = 6;
+            this.LBSoalKe.Text = "0";
+            // 
             // UCGameOpsi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,12 +274,12 @@
         private System.Windows.Forms.TextBox TBNamaKanan;
         private System.Windows.Forms.RichTextBox TBKetKiri;
         private System.Windows.Forms.TextBox TBNamaKiri;
-        private System.Windows.Forms.Label LBSoalKe;
         private System.Windows.Forms.RichTextBox TBQuest;
         private System.Windows.Forms.Label LBTotalSoal;
         private System.Windows.Forms.Label LBTotalPoin;
         private System.Windows.Forms.Label LBPoinKe;
         private System.Windows.Forms.Button BTNClose;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label LBSoalKe;
     }
 }
