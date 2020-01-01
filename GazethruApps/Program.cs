@@ -16,7 +16,7 @@ namespace GazethruApps
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formAwal());
+            Application.Run(new FormHome());
         }
     }
 }

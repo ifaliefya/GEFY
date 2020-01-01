@@ -92,89 +92,17 @@
     <Compile Include="AdminGame.Designer.cs">
       <DependentUpon>AdminGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminInfoNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminInfoNew.Designer.cs">
-      <DependentUpon>AdminInfoNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminInfoEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminInfoEdit.Designer.cs">
-      <DependentUpon>AdminInfoEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminInformasi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminInformasi.Designer.cs">
-      <DependentUpon>AdminInformasi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminKegiatan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminKegiatan.Designer.cs">
-      <DependentUpon>AdminKegiatan.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminPetaAwal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminPetaAwal.Designer.cs">
-      <DependentUpon>AdminPetaAwal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPetaNewLantai.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminPetaNewLantai.Designer.cs">
-      <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPetaNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPetaNew.Designer.cs">
-      <DependentUpon>AdminPetaNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPetaNewRuang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminPetaNewRuang.Designer.cs">
-      <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPrestasi.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminPrestasi.Designer.cs">
-      <DependentUpon>AdminPrestasi.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AdminSetting.Designer.cs">
       <DependentUpon>AdminSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminSlideEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminSlideEdit.Designer.cs">
-      <DependentUpon>AdminSlideEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminSlideNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminSlideNew.Designer.cs">
-      <DependentUpon>AdminSlideNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminSlideshow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="AdminSlideshow.Designer.cs">
-      <DependentUpon>AdminSlideshow.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAwal.cs">
       <SubType>Form</SubType>
@@ -188,31 +116,11 @@
     <Compile Include="FormGame.Designer.cs">
       <DependentUpon>FormGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInformasi.cs">
-      <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="FormInformasi.Designer.cs">
-      <DependentUpon>FormInformasi.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="FormKegiatan.cs">
+    <Compile Include="FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormKegiatan.Designer.cs">
-      <DependentUpon>FormKegiatan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormLantai1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLantai1.Designer.cs">
-      <DependentUpon>FormLantai1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormPeta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPeta.Designer.cs">
-      <DependentUpon>FormPeta.cs</DependentUpon>
+    <Compile Include="FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
     <Compile Include="FormPlayVideo.cs">
       <SubType>Form</SubType>
@@ -220,35 +128,17 @@
     <Compile Include="FormPlayVideo.Designer.cs">
       <DependentUpon>FormPlayVideo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrestasi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPrestasi.Designer.cs">
-      <DependentUpon>FormPrestasi.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormStartGame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormStartGame.Designer.cs">
       <DependentUpon>FormStartGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTentang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTentang.Designer.cs">
-      <DependentUpon>FormTentang.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTutorial.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTutorial.Designer.cs">
       <DependentUpon>FormTutorial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormUser.Designer.cs">
-      <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVideo.cs">
       <SubType>Form</SubType>
@@ -280,47 +170,11 @@
     <EmbeddedResource Include="AdminGame.resx">
       <DependentUpon>AdminGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminInfoNew.resx">
-      <DependentUpon>AdminInfoNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminInfoEdit.resx">
-      <DependentUpon>AdminInfoEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminInformasi.resx">
-      <DependentUpon>AdminInformasi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminKegiatan.resx">
-      <DependentUpon>AdminKegiatan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaAwal.resx">
-      <DependentUpon>AdminPetaAwal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaNewLantai.resx">
-      <DependentUpon>AdminPetaNewLantai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaNew.resx">
-      <DependentUpon>AdminPetaNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPetaNewRuang.resx">
-      <DependentUpon>AdminPetaNewRuang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminPrestasi.resx">
-      <DependentUpon>AdminPrestasi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AdminSetting.resx">
       <DependentUpon>AdminSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminSlideEdit.resx">
-      <DependentUpon>AdminSlideEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminSlideNew.resx">
-      <DependentUpon>AdminSlideNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminSlideshow.resx">
-      <DependentUpon>AdminSlideshow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAwal.resx">
       <DependentUpon>FormAwal.cs</DependentUpon>
@@ -328,36 +182,17 @@
     <EmbeddedResource Include="FormGame.resx">
       <DependentUpon>FormGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInformasi.resx">
-      <DependentUpon>FormInformasi.cs</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormKegiatan.resx">
-      <DependentUpon>FormKegiatan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormLantai1.resx">
-      <DependentUpon>FormLantai1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormPeta.resx">
-      <DependentUpon>FormPeta.cs</DependentUpon>
+    <EmbeddedResource Include="FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPlayVideo.resx">
       <DependentUpon>FormPlayVideo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrestasi.resx">
-      <DependentUpon>FormPrestasi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormStartGame.resx">
       <DependentUpon>FormStartGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTentang.resx">
-      <DependentUpon>FormTentang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTutorial.resx">
       <DependentUpon>FormTutorial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormUser.resx">
-      <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVideo.resx">
       <DependentUpon>FormVideo.cs</DependentUpon>

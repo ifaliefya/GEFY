@@ -47,6 +47,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.buttonInfo = new System.Windows.Forms.Button();
+            this.TimerTombol = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -96,16 +97,17 @@
             // 
             // btnUser
             // 
-            this.btnUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(185)))));
+            this.btnUser.BackColor = System.Drawing.Color.Transparent;
+            this.btnUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUser.BackgroundImage")));
+            this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnUser.FlatAppearance.BorderSize = 0;
             this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUser.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUser.ForeColor = System.Drawing.Color.White;
             this.btnUser.Location = new System.Drawing.Point(1592, 477);
             this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(174, 56);
+            this.btnUser.Size = new System.Drawing.Size(225, 150);
             this.btnUser.TabIndex = 4;
-            this.btnUser.Text = "Game";
             this.btnUser.UseVisualStyleBackColor = false;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
@@ -113,7 +115,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 14;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // panel2
             // 
@@ -194,7 +195,8 @@
             this.progressBar1.Location = new System.Drawing.Point(1592, 477);
             this.progressBar1.Maximum = 80;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(174, 5);
+            this.progressBar1.RightToLeftLayout = true;
+            this.progressBar1.Size = new System.Drawing.Size(225, 5);
             this.progressBar1.TabIndex = 37;
             // 
             // pictureBox2
@@ -214,7 +216,7 @@
             this.progressBar2.Location = new System.Drawing.Point(218, 477);
             this.progressBar2.Maximum = 80;
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(174, 5);
+            this.progressBar2.Size = new System.Drawing.Size(225, 5);
             this.progressBar2.TabIndex = 39;
             // 
             // buttonInfo
@@ -228,9 +230,8 @@
             this.buttonInfo.ForeColor = System.Drawing.Color.White;
             this.buttonInfo.Location = new System.Drawing.Point(218, 477);
             this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(189, 113);
+            this.buttonInfo.Size = new System.Drawing.Size(225, 150);
             this.buttonInfo.TabIndex = 38;
-            this.buttonInfo.Text = "Tahukah Kamu";
             this.buttonInfo.UseVisualStyleBackColor = false;
             this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
             // 
@@ -286,6 +287,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Button buttonInfo;
+        private System.Windows.Forms.Timer TimerTombol;
     }
 }
 
