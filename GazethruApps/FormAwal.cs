@@ -15,26 +15,23 @@ using System.Media;
 
 namespace GazethruApps
 {
+
+
     public partial class formAwal : Form
     {
         List<double> wx;
         List<double> wy;
         int lap = 0;
 
-        List<int> ShowID = new List<int>();
-        int counter = 0;
-        int maxCounter;
-        int nowShowing;
-        Object[] numb;
-
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
         KendaliTombol kendali;
 
         private SoundPlayer SelectSound = new SoundPlayer();
         public formAwal()
         {
             InitializeComponent();
-            
+            TimerTombol.Tick += new System.EventHandler(this.TimerTombol_Tick);
+            TimerTombol.Start();
+
             kendali = new KendaliTombol();
             
             wx = new List<double>();
@@ -69,6 +66,8 @@ namespace GazethruApps
             return Instance;
         }
 
+
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -81,12 +80,12 @@ namespace GazethruApps
 
         private void formAwal_Load(object sender, EventArgs e)
         {
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 14;
-            this.timer1.Start();
+            TimerTombol.Interval = 1;
+            TimerTombol.Tick += new System.EventHandler(this.TimerTombol_Tick);
+            TimerTombol.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimerTombol_Tick(object sender, EventArgs e)
         {
             buttonInfo.Location = new Point((int)wx[1], (int)wy[1]);
             btnUser.Location = new Point((int)wx[0], (int)wy[0]);
@@ -117,7 +116,9 @@ namespace GazethruApps
             kendali.CekTombol();
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
-        {                        
+        {
+
+            //Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
@@ -128,7 +129,8 @@ namespace GazethruApps
                 FormGame FormUser = FormGame.getInstance();
                 FormUser.Show();                                
                 this.Hide();
-                timer1.Stop();
+                TimerTombol.Stop();
+                TimerTombol.Tick -= TimerTombol_Tick;
             }
 
             //btnUser.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);     //untuk opacity
@@ -146,7 +148,8 @@ namespace GazethruApps
                 FormGame FormUser = FormGame.getInstance();
                 FormUser.Show();
                 this.Hide();
-                timer1.Stop();
+                TimerTombol.Stop();
+                TimerTombol.Tick -= TimerTombol_Tick;
             }
 
             //buttonInfo.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);

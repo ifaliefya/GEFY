@@ -161,10 +161,11 @@ namespace GazethruApps
 
        public void StartTimer(int urutan)
         {
+            //await Task.Delay(1000);
             this.Controls.Add(this.PnlTimer);
             PnlTimer.Visible = true;
             PnlGame.Visible = false;
-            ResetGame();
+
             LblNextSoal.Text = urutan.ToString();
             Sequence = urutan;
 
@@ -220,7 +221,7 @@ namespace GazethruApps
                 }
             }
             con.Close();
-            TombolTimer.Tick += new EventHandler(TombolTimer_Tick);
+            ResetGame();
         }
 
         public void LoadPict(Byte[] img1, Byte[] img2)
@@ -236,6 +237,10 @@ namespace GazethruApps
         {
             PBOpsiKiri.Location = new Point(372,87);
             PBOpsiKanan.Location = new Point(1351, 635);
+
+            PBOpsiKiri.Size = new Size(200, 200);
+            PBOpsiKanan.Size = new Size(200, 200);
+
             foreach (Control textbox in PnlGame.Controls)
                 if (textbox is TextBox)
                 {
@@ -245,6 +250,8 @@ namespace GazethruApps
                 {
                     textbox.Visible = false;
                 }
+            TombolTimer.Tick += new EventHandler(TombolTimer_Tick);
+            TombolTimer.Start();
         }
 
         private void PBOpsiKiri_Click(object sender, EventArgs e)
@@ -270,12 +277,20 @@ namespace GazethruApps
 
         public void OpsiTerpilih(PictureBox PBOpsiTerpilih, Option OpsiTerpilih)
         {
+            //Move pict on the middle 
             PBOpsiKiri.Location = new Point(332, 315);
             PBOpsiKanan.Location = new Point(1403, 315);
 
+            //Scaling choosen picture
             PopUpGambar(PBOpsiTerpilih);
+
+            //Result Right/Wrong
             PopUpHasil(OpsiTerpilih);
+
+            //Show pict's description
             PopUpTextBox();
+
+            //Start timer for the next question
             //StartTimer(NextUrut);
         }
 

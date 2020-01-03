@@ -37,7 +37,7 @@
             // BtnStart
             // 
             this.BtnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnStart.Location = new System.Drawing.Point(667, 510);
+            this.BtnStart.Location = new System.Drawing.Point(944, 807);
             this.BtnStart.Name = "BtnStart";
             this.BtnStart.Size = new System.Drawing.Size(137, 41);
             this.BtnStart.TabIndex = 0;
@@ -48,7 +48,7 @@
             // BtnBack
             // 
             this.BtnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBack.Location = new System.Drawing.Point(1203, 250);
+            this.BtnBack.Location = new System.Drawing.Point(1704, 422);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(117, 39);
             this.BtnBack.TabIndex = 1;
@@ -61,7 +61,7 @@
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(142, 100);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(992, 19);
+            this.textBox1.Size = new System.Drawing.Size(1556, 19);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Permainan Memilih (?)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -72,7 +72,7 @@
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(142, 148);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(992, 313);
+            this.richTextBox1.Size = new System.Drawing.Size(1556, 634);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "Aturannya....";
             // 
