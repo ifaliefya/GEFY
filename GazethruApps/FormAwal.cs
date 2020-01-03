@@ -15,8 +15,6 @@ using System.Media;
 
 namespace GazethruApps
 {
-
-
     public partial class formAwal : Form
     {
         List<double> wx;
@@ -36,8 +34,7 @@ namespace GazethruApps
         public formAwal()
         {
             InitializeComponent();
-
-
+            
             kendali = new KendaliTombol();
             
             wx = new List<double>();
@@ -72,8 +69,6 @@ namespace GazethruApps
             return Instance;
         }
 
-
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -86,8 +81,9 @@ namespace GazethruApps
 
         private void formAwal_Load(object sender, EventArgs e)
         {
-            //timer1.Interval = 1;
-            //timer1.Start();
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 14;
+            this.timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -121,9 +117,7 @@ namespace GazethruApps
             kendali.CekTombol();
         }
         private void TombolUserTekan(ArgumenKendaliTombol eawal)
-        {
-
-            //Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
+        {                        
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
