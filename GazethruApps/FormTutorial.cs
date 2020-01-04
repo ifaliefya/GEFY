@@ -13,6 +13,21 @@ namespace GazethruApps
 {
     public partial class FormTutorial : Form
     {
+        public static FormTutorial Instance;
+
+        public static FormTutorial getInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = new FormTutorial();
+            }
+            else
+            {
+                Instance.BringToFront();
+            }
+            return Instance;
+        }
+
         List<int> GameSequence = new List<int>();
         int Max;
         List<int> randomRecords = new List<int>();
