@@ -40,23 +40,23 @@
             this.TBKetKanan = new System.Windows.Forms.RichTextBox();
             this.LabelCoba = new System.Windows.Forms.Label();
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.PnlTimer = new System.Windows.Forms.Panel();
+            this.LblNextSoal = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.LblTimer = new System.Windows.Forms.Label();
+            this.TbxResult = new System.Windows.Forms.TextBox();
             this.BTNClose = new System.Windows.Forms.Button();
             this.LBPoinKe = new System.Windows.Forms.Label();
             this.LBTotalPoin = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LBSoalKe = new System.Windows.Forms.Label();
             this.LBTotalSoal = new System.Windows.Forms.Label();
-            this.TbxResult = new System.Windows.Forms.TextBox();
             this.TombolTimer = new System.Windows.Forms.Timer(this.components);
-            this.PnlTimer = new System.Windows.Forms.Panel();
-            this.LblNextSoal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.LblTimer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKanan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKiri)).BeginInit();
             this.PnlGame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnlTimer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // TBQuest
@@ -168,6 +168,60 @@
             this.PnlGame.Size = new System.Drawing.Size(1858, 915);
             this.PnlGame.TabIndex = 0;
             // 
+            // PnlTimer
+            // 
+            this.PnlTimer.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PnlTimer.Controls.Add(this.LblNextSoal);
+            this.PnlTimer.Controls.Add(this.button1);
+            this.PnlTimer.Controls.Add(this.LblTimer);
+            this.PnlTimer.Location = new System.Drawing.Point(457, 214);
+            this.PnlTimer.Name = "PnlTimer";
+            this.PnlTimer.Size = new System.Drawing.Size(944, 486);
+            this.PnlTimer.TabIndex = 22;
+            // 
+            // LblNextSoal
+            // 
+            this.LblNextSoal.AutoSize = true;
+            this.LblNextSoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblNextSoal.Location = new System.Drawing.Point(454, 158);
+            this.LblNextSoal.Name = "LblNextSoal";
+            this.LblNextSoal.Size = new System.Drawing.Size(51, 20);
+            this.LblNextSoal.TabIndex = 18;
+            this.LblNextSoal.Text = "label1";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(931, 865);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Next";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // LblTimer
+            // 
+            this.LblTimer.AutoSize = true;
+            this.LblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblTimer.Location = new System.Drawing.Point(453, 217);
+            this.LblTimer.Name = "LblTimer";
+            this.LblTimer.Size = new System.Drawing.Size(60, 24);
+            this.LblTimer.TabIndex = 16;
+            this.LblTimer.Text = "label1";
+            // 
+            // TbxResult
+            // 
+            this.TbxResult.BackColor = System.Drawing.Color.MistyRose;
+            this.TbxResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TbxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbxResult.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TbxResult.Location = new System.Drawing.Point(805, 280);
+            this.TbxResult.Name = "TbxResult";
+            this.TbxResult.ReadOnly = true;
+            this.TbxResult.Size = new System.Drawing.Size(312, 22);
+            this.TbxResult.TabIndex = 20;
+            this.TbxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // BTNClose
             // 
             this.BTNClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,6 +231,7 @@
             this.BTNClose.TabIndex = 17;
             this.BTNClose.Text = "Next";
             this.BTNClose.UseVisualStyleBackColor = true;
+            this.BTNClose.Click += new System.EventHandler(this.BTNClose_Click);
             // 
             // LBPoinKe
             // 
@@ -228,63 +283,9 @@
             this.LBTotalSoal.TabIndex = 6;
             this.LBTotalSoal.Text = "/ 0";
             // 
-            // TbxResult
-            // 
-            this.TbxResult.BackColor = System.Drawing.Color.MistyRose;
-            this.TbxResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TbxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbxResult.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.TbxResult.Location = new System.Drawing.Point(805, 280);
-            this.TbxResult.Name = "TbxResult";
-            this.TbxResult.ReadOnly = true;
-            this.TbxResult.Size = new System.Drawing.Size(312, 22);
-            this.TbxResult.TabIndex = 20;
-            this.TbxResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // TombolTimer
             // 
             this.TombolTimer.Tick += new System.EventHandler(this.TombolTimer_Tick);
-            // 
-            // PnlTimer
-            // 
-            this.PnlTimer.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PnlTimer.Controls.Add(this.LblNextSoal);
-            this.PnlTimer.Controls.Add(this.button1);
-            this.PnlTimer.Controls.Add(this.LblTimer);
-            this.PnlTimer.Location = new System.Drawing.Point(457, 214);
-            this.PnlTimer.Name = "PnlTimer";
-            this.PnlTimer.Size = new System.Drawing.Size(944, 486);
-            this.PnlTimer.TabIndex = 22;
-            // 
-            // LblNextSoal
-            // 
-            this.LblNextSoal.AutoSize = true;
-            this.LblNextSoal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblNextSoal.Location = new System.Drawing.Point(454, 158);
-            this.LblNextSoal.Name = "LblNextSoal";
-            this.LblNextSoal.Size = new System.Drawing.Size(51, 20);
-            this.LblNextSoal.TabIndex = 18;
-            this.LblNextSoal.Text = "label1";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(931, 865);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Next";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // LblTimer
-            // 
-            this.LblTimer.AutoSize = true;
-            this.LblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblTimer.Location = new System.Drawing.Point(453, 217);
-            this.LblTimer.Name = "LblTimer";
-            this.LblTimer.Size = new System.Drawing.Size(60, 24);
-            this.LblTimer.TabIndex = 16;
-            this.LblTimer.Text = "label1";
             // 
             // FormStartGame
             // 
@@ -305,9 +306,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBOpsiKiri)).EndInit();
             this.PnlGame.ResumeLayout(false);
             this.PnlGame.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnlTimer.ResumeLayout(false);
             this.PnlTimer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

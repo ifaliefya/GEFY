@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnStart = new System.Windows.Forms.Button();
             this.BtnBack = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // BtnStart
@@ -48,12 +50,13 @@
             // BtnBack
             // 
             this.BtnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBack.Location = new System.Drawing.Point(1704, 422);
+            this.BtnBack.Location = new System.Drawing.Point(1704, 222);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(117, 39);
             this.BtnBack.TabIndex = 1;
             this.BtnBack.Text = "Kembali";
             this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // textBox1
             // 
@@ -76,6 +79,11 @@
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "Aturannya....";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormTutorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +96,7 @@
             this.Name = "FormTutorial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTutorial";
+            this.Load += new System.EventHandler(this.FormTutorial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +108,6 @@
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

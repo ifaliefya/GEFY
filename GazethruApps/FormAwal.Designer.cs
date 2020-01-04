@@ -113,7 +113,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 14;
             // 
             // panel2
@@ -234,6 +233,10 @@
             this.buttonInfo.TabIndex = 38;
             this.buttonInfo.UseVisualStyleBackColor = false;
             this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
+            // 
+            // TimerTombol
+            // 
+            this.TimerTombol.Enabled = true;
             // 
             // formAwal
             // 

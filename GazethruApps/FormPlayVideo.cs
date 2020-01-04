@@ -30,6 +30,17 @@ namespace GazethruApps
             wy.Add(0);
             wx[0] = 1725;
             wy[0] = 232;
+
+            kendali.TambahTombol(BtnBack, new FungsiTombol(TombolBackTekan));
+            kendali.Start();
+        }
+
+        private void TombolBackTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                this.Close();
+            }
         }
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
@@ -66,9 +77,10 @@ namespace GazethruApps
             if (lap == 1)
                 wy[0]--;
             if (wy[0] == 823)
-                lap = 0;
-            if (wy[0] == 232)
                 lap = 1;
+            if (wy[0] == 232)
+                lap = 0;
+            kendali.CekTombol();
         }
 
         private void FormPlayVideo_Load(object sender, EventArgs e)

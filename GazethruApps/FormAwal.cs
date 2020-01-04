@@ -15,8 +15,6 @@ using System.Media;
 
 namespace GazethruApps
 {
-
-
     public partial class formAwal : Form
     {
         List<double> wx;
@@ -48,7 +46,6 @@ namespace GazethruApps
             
             kendali.TambahTombol(btnUser, new FungsiTombol(TombolUserTekan));
             kendali.TambahTombol(buttonInfo, new FungsiTombol(TombolTahukahKamu));
-
             kendali.Start();
         }
 
@@ -66,8 +63,6 @@ namespace GazethruApps
             return Instance;
         }
 
-
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -80,9 +75,10 @@ namespace GazethruApps
 
         private void formAwal_Load(object sender, EventArgs e)
         {
-            TimerTombol.Interval = 1;
+            TimerTombol.Interval = 14;
             TimerTombol.Tick += new System.EventHandler(this.TimerTombol_Tick);
             TimerTombol.Start();
+            TimerTombol.Enabled = true;
         }
 
         private void TimerTombol_Tick(object sender, EventArgs e)
@@ -96,29 +92,22 @@ namespace GazethruApps
                 wy[0]--;
                 wy[1]++;         
             }
-
             if (lap == 1) //titik akhir, balik
             {
                 wy[0]++;
                 wy[1]--;
             }
-
             if (wy[0] == 477)
-            {
-                lap = 1; //titik akhir
-            }
-
+                lap = 1; //titik akhir            
             if (wy[0] == 1000)
-            {
                 lap = 0;
-            }
-            
+                        
             kendali.CekTombol();
         }
-        private void TombolUserTekan(ArgumenKendaliTombol eawal)
-        {
 
-            //Console.WriteLine(eawal.korelasiX + "      " + eawal.korelasiY + "        " + eawal.DataKor);
+        /////////////  Event Kendali mata ///////
+        private void TombolUserTekan(ArgumenKendaliTombol eawal)
+        {                        
             PresenceCheck.Visible = false;
             if (eawal.CekMata)
             {
@@ -126,34 +115,26 @@ namespace GazethruApps
             }
             if (eawal.status)
             {
-                FormGame FormUser = FormGame.getInstance();
-                FormUser.Show();                                
-                this.Hide();
-                TimerTombol.Stop();
-                TimerTombol.Tick -= TimerTombol_Tick;
-            }
+                SFXSeleksi();
 
-            //btnUser.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);     //untuk opacity
-            //progressBar1.Value = eawal.DataKor;                                //untuk progressbar
-        }
-
-        private void TombolTahukahKamu(ArgumenKendaliTombol eawal)
-        {
-            if (eawal.CekMata)
-            {
-                PresenceCheck.Visible = true;
-            }
-            if (eawal.status)
-            {
-                FormGame FormUser = FormGame.getInstance();
+                //FormGame FormUser = FormGame.getInstance();
+                FormTutorial FormUser = new FormTutorial();
                 FormUser.Show();
                 this.Hide();
-                TimerTombol.Stop();
-                TimerTombol.Tick -= TimerTombol_Tick;
             }
-
-            //buttonInfo.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);
+                        
         }
+        private void TombolTahukahKamu(ArgumenKendaliTombol eawal)
+        {            
+            if (eawal.status)
+            {                
+                FormVideo FormVideo = new FormVideo();
+                FormVideo.Show();
+            }
+            
+        }
+        ////////////////  Sampai disini event kendali mata ////////////
+
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             AdminLogin LoginAdmin = new AdminLogin();
@@ -184,6 +165,7 @@ namespace GazethruApps
         {
             FormVideo FormVideo = new FormVideo();
             FormVideo.Show();
+            this.Hide();
         }
 
         private void btnUser_Click(object sender, EventArgs e)     //Button Game

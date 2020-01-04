@@ -32,8 +32,8 @@ namespace GazethruApps
         }
 
         List<int> GameSequence = new List<int>();
-        int counter;
-        int Min;
+        //int counter;
+        //int Min;
         int Max;
         List<int> randomRecords = new List<int>();
 

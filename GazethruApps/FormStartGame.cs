@@ -73,7 +73,7 @@ namespace GazethruApps
             kendaliuser.Start();
         }
 
-        //////////////   Kendali Pake mata    ////////////////////////////        
+        //////////////   Event Kendali mata    ////////////////////////////        
         private void PilihOpsiKiri(ArgumenKendaliTombol e)
         {
             if (e.status)
@@ -373,6 +373,11 @@ namespace GazethruApps
         {
             this.SoundKembali.SoundLocation = @"TombolKembali.wav";
             this.SoundKembali.Play();
+        }
+
+        private void BTNClose_Click(object sender, EventArgs e)
+        {
+
         }
 
 

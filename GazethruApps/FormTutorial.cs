@@ -19,11 +19,30 @@ namespace GazethruApps
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
 
+        KendaliTombol kendali;
+        List<double> wx;
+        List<double> wy;
+        int lap = 0;
         public FormTutorial()
         {
             InitializeComponent();
-        }
+            kendali = new KendaliTombol();
+            wx = new List<double>();
+            wy = new List<double>();
+            wx.Add(0);
+            wy.Add(0);
+            wx.Add(0);
+            wy.Add(0);
+            wx[0] = 744;
+            wy[0] = 807;
+            wx[1] = 1704;
+            wy[1] = 222;
 
+            kendali.TambahTombol(BtnStart, new FungsiTombol(TombolStartTekan));
+            kendali.TambahTombol(BtnBack, new FungsiTombol(TombolBackTekan));
+            kendali.Start();
+        }
+        
         public void SetRandomSequence()
         {
             con.Open();
@@ -75,5 +94,62 @@ namespace GazethruApps
             FormStartGame Start = new FormStartGame();
             Start.Show();
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            formAwal frmawal = new formAwal();
+            frmawal.Show();
+            this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            BtnStart.Location = new Point((int)wx[0], (int)wy[0]);
+            BtnBack.Location = new Point((int)wx[1], (int)wy[1]);
+            if(lap==0)
+            {
+                wx[0]++;
+                wy[1]++;
+            }
+            if(lap==1)
+            {
+                wx[0]--;
+                wy[1]--;
+            }
+            if(wx[0]==1144)
+                lap = 1;
+            if(wx[0]==744)
+                lap = 0;
+
+            kendali.CekTombol();
+        }
+
+        private void FormTutorial_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timer1.Interval = 14;
+            timer1.Start();
+        }
+        /////////////// Event Kendali mata /////////
+        private void TombolStartTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                SetRandomSequence();
+                FormStartGame Start = new FormStartGame();
+                Start.Show();
+                this.Close();
+            }
+        }
+        private void TombolBackTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                formAwal frmawal = new formAwal();
+                frmawal.Show();
+                this.Close();
+            }
+        }
+        ////////////////// End Event kendali ////////////
     }
 }

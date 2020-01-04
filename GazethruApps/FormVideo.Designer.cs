@@ -43,6 +43,7 @@
             this.TbxJudulKanan = new System.Windows.Forms.RichTextBox();
             this.PbxKanan = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.BtnBack = new System.Windows.Forms.Button();
             this.PanelTengah.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxTengah)).BeginInit();
             this.PanelKiri.SuspendLayout();
@@ -54,7 +55,6 @@
             // PanelTengah
             // 
             this.PanelTengah.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.PanelTengah.Controls.Add(this.BtnPlay);
             this.PanelTengah.Controls.Add(this.TbxJudulTengah);
             this.PanelTengah.Controls.Add(this.TbxDescTengah);
             this.PanelTengah.Controls.Add(this.PbxTengah);
@@ -66,7 +66,7 @@
             // BtnPlay
             // 
             this.BtnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPlay.Location = new System.Drawing.Point(57, 636);
+            this.BtnPlay.Location = new System.Drawing.Point(688, 931);
             this.BtnPlay.Name = "BtnPlay";
             this.BtnPlay.Size = new System.Drawing.Size(117, 34);
             this.BtnPlay.TabIndex = 4;
@@ -194,11 +194,24 @@
             this.timer1.Interval = 14;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // BtnBack
+            // 
+            this.BtnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBack.Location = new System.Drawing.Point(1134, 962);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(117, 34);
+            this.BtnBack.TabIndex = 5;
+            this.BtnBack.Text = "BACK";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
             // FormVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.BtnPlay);
+            this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.PanelTengah);
             this.Controls.Add(this.PanelKanan);
             this.Controls.Add(this.PanelKiri);
@@ -234,5 +247,6 @@
         private System.Windows.Forms.RichTextBox TbxJudulKanan;
         private System.Windows.Forms.PictureBox PbxKanan;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button BtnBack;
     }
 }

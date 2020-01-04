@@ -39,16 +39,23 @@ namespace GazethruApps
             wy.Add(0);
             wx.Add(0);
             wy.Add(0);
+            wx.Add(0);
+            wy.Add(0);
             wx[0] = 171;
             wy[0] = 333;
             wx[1] = 1690;
             wy[1] = 779;
             wx[2] = 688;
-            wy[2] = 636;
+            wy[2] = 836;
+            wx[3] = 1134;
+            wy[3] = 962;
 
+            kendali.TambahTombol(BtnPrev, new FungsiTombol(TombolPrevTekan));
+            kendali.TambahTombol(BtnNext, new FungsiTombol(TombolNextTekan));
+            kendali.TambahTombol(BtnPlay, new FungsiTombol(TombolPlayTekan));
+            kendali.TambahTombol(BtnBack, new FungsiTombol(TombolBackTekan));
             kendali.Start();
-        }
-
+        }        
         void PopulateViewID()
         {
             con.Open();
@@ -253,40 +260,80 @@ namespace GazethruApps
             Play.Show();
             Play.PlayVideo(ShowID[counter]);
         }
-
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            formAwal frmawal = new formAwal();
+            frmawal.Show();
+            this.Close();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             BtnPrev.Location = new Point((int)wx[0], (int)wy[0]);
             BtnNext.Location = new Point((int)wx[1], (int)wy[1]);
             BtnPlay.Location = new Point((int)wx[2], (int)wy[2]);
+            BtnBack.Location = new Point((int)wx[3], (int)wy[3]);
             if(lap ==0)
-            {
-                wy[0]--;
-                wy[1]++;
-                wx[2]++;
-            }
-            if(lap==1)
             {
                 wy[0]++;
                 wy[1]--;
+                wx[2]++;
+                wx[3]--;
+            }
+            if(lap==1)
+            {
+                wy[0]--;
+                wy[1]++;
                 wx[2]--;
+                wx[3]++;
             }
             if(wx[2]== 688)
-            {
-                lap = 0;
-            }
+                lap = 0;            
             if(wx[2]== 1134)
-            {
                 lap = 1;
-            }
             kendali.CekTombol();
         }
+        ////////////////////// Event Kendali mata ////////////
+        private void TombolPrevTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                counter = counter - 1;
+                ReloadCarousel(counter);
+            }
+        }
+        private void TombolNextTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                counter = counter + 1;
+                ReloadCarousel(counter);
+            }
+        }
+        private void TombolPlayTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                FormPlayVideo Play = new FormPlayVideo();
+                Play.Show();
+                Play.PlayVideo(ShowID[counter]);
+            }
+        }
+        private void TombolBackTekan(ArgumenKendaliTombol e)
+        {
+            if (e.status)
+            {
+                formAwal frmawal = new formAwal();
+                frmawal.Show();
+                this.Close();
+            }
+        }
+        ////////////////////// End kendali mata /////////////
 
         private void FormVideo_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
             timer1.Interval = 1;
             timer1.Start();
-        }
+        }        
     }
 }
