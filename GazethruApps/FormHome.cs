@@ -110,15 +110,15 @@ namespace GazethruApps
             }
             if (eawal.status)
             {
-                FormGame FormUser = FormGame.getInstance();
-                FormUser.Show();
+                FormTutorial FormGame = FormTutorial.getInstance();
+                FormGame.Show();
                 this.Hide();
                 TimerTombol.Stop();
                 TimerTombol.Tick -= TimerTombol_Tick;
             }
 
-            //btnUser.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);     //untuk opacity
-            //progressBar1.Value = eawal.DataKor;                                //untuk progressbar
+            btnUser.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);     //untuk opacity
+            progressBar1.Value = eawal.DataKor;                                //untuk progressbar
         }
 
         private void TombolTahukahKamu(ArgumenKendaliTombol eawal)
@@ -129,14 +129,15 @@ namespace GazethruApps
             }
             if (eawal.status)
             {
-                //FormTutorial FormGame = Tutorial.getInstance();
-                //FormGame.Show();
+                FormTutorial FormGame = FormTutorial.getInstance();
+                FormGame.Show();
                 this.Hide();
                 TimerTombol.Stop();
                 TimerTombol.Tick -= TimerTombol_Tick;
             }
 
-            //buttonInfo.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);
+            buttonInfo.BackColor = Color.FromArgb(eawal.DataKor, 0, 150, 185);
+            progressBar2.Value = eawal.DataKor;
         }
 
         private void buttonInfo_Click(object sender, EventArgs e)
@@ -166,6 +167,16 @@ namespace GazethruApps
         {
             this.SelectSound.SoundLocation = @"TombolTerpilih.wav";
             this.SelectSound.Play();
+        }
+
+        private void btnMini_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnTutup_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

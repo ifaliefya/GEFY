@@ -176,6 +176,7 @@
             this.btnTutup.TabIndex = 36;
             this.btnTutup.Text = "x";
             this.btnTutup.UseVisualStyleBackColor = false;
+            this.btnTutup.Click += new System.EventHandler(this.btnTutup_Click);
             // 
             // btnMini
             // 
@@ -187,6 +188,7 @@
             this.btnMini.TabIndex = 35;
             this.btnMini.Text = "-";
             this.btnMini.UseVisualStyleBackColor = false;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
             // 
             // buttonAdmin2
             // 
