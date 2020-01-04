@@ -20,11 +20,33 @@ namespace GazethruApps
         int TengahID;
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+        KendaliTombol kendali;
+        List<double> wx;
+        List<double> wy;
+        int lap = 0;
 
         public FormVideo()
         {
             InitializeComponent();
             PopulateViewID();
+            kendali = new KendaliTombol();
+
+            wx = new List<double>();
+            wy = new List<double>();
+            wx.Add(0);
+            wy.Add(0);
+            wx.Add(0);
+            wy.Add(0);
+            wx.Add(0);
+            wy.Add(0);
+            wx[0] = 171;
+            wy[0] = 333;
+            wx[1] = 1690;
+            wy[1] = 779;
+            wx[2] = 688;
+            wy[2] = 636;
+
+            kendali.Start();
         }
 
         void PopulateViewID()
@@ -230,6 +252,41 @@ namespace GazethruApps
             FormPlayVideo Play = new FormPlayVideo();
             Play.Show();
             Play.PlayVideo(ShowID[counter]);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            BtnPrev.Location = new Point((int)wx[0], (int)wy[0]);
+            BtnNext.Location = new Point((int)wx[1], (int)wy[1]);
+            BtnPlay.Location = new Point((int)wx[2], (int)wy[2]);
+            if(lap ==0)
+            {
+                wy[0]--;
+                wy[1]++;
+                wx[2]++;
+            }
+            if(lap==1)
+            {
+                wy[0]++;
+                wy[1]--;
+                wx[2]--;
+            }
+            if(wx[2]== 688)
+            {
+                lap = 0;
+            }
+            if(wx[2]== 1134)
+            {
+                lap = 1;
+            }
+            kendali.CekTombol();
+        }
+
+        private void FormVideo_Load(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            timer1.Interval = 1;
+            timer1.Start();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PanelTengah = new System.Windows.Forms.Panel();
             this.BtnPlay = new System.Windows.Forms.Button();
             this.TbxJudulTengah = new System.Windows.Forms.RichTextBox();
@@ -41,6 +42,7 @@
             this.PanelKanan = new System.Windows.Forms.Panel();
             this.TbxJudulKanan = new System.Windows.Forms.RichTextBox();
             this.PbxKanan = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelTengah.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxTengah)).BeginInit();
             this.PanelKiri.SuspendLayout();
@@ -64,7 +66,7 @@
             // BtnPlay
             // 
             this.BtnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPlay.Location = new System.Drawing.Point(275, 636);
+            this.BtnPlay.Location = new System.Drawing.Point(57, 636);
             this.BtnPlay.Name = "BtnPlay";
             this.BtnPlay.Size = new System.Drawing.Size(117, 34);
             this.BtnPlay.TabIndex = 4;
@@ -186,6 +188,12 @@
             this.PbxKanan.TabIndex = 0;
             this.PbxKanan.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 14;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +207,7 @@
             this.Name = "FormVideo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVideo";
+            this.Load += new System.EventHandler(this.FormVideo_Load);
             this.PanelTengah.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbxTengah)).EndInit();
             this.PanelKiri.ResumeLayout(false);
@@ -224,5 +233,6 @@
         private System.Windows.Forms.Panel PanelKanan;
         private System.Windows.Forms.RichTextBox TbxJudulKanan;
         private System.Windows.Forms.PictureBox PbxKanan;
+        private System.Windows.Forms.Timer timer1;
     }
 }

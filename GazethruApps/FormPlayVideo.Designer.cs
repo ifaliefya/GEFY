@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPlayVideo));
             this.MediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.BtnBack = new System.Windows.Forms.Button();
             this.LblJudul = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,7 @@
             // BtnBack
             // 
             this.BtnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBack.Location = new System.Drawing.Point(1725, 523);
+            this.BtnBack.Location = new System.Drawing.Point(1725, 223);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(112, 65);
             this.BtnBack.TabIndex = 1;
@@ -65,6 +67,11 @@
             this.LblJudul.TabIndex = 2;
             this.LblJudul.Text = "Judul Video";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormPlayVideo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,6 +83,7 @@
             this.Name = "FormPlayVideo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPlayVideo";
+            this.Load += new System.EventHandler(this.FormPlayVideo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MediaPlayer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +95,6 @@
         private AxWMPLib.AxWindowsMediaPlayer MediaPlayer;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Label LblJudul;
+        private System.Windows.Forms.Timer timer1;
     }
 }
