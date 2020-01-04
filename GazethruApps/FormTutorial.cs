@@ -112,7 +112,7 @@ namespace GazethruApps
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            formAwal frmawal = new formAwal();
+            FormHome frmawal = new FormHome();
             frmawal.Show();
             this.Close();
         }
@@ -160,7 +160,7 @@ namespace GazethruApps
         {
             if (e.status)
             {
-                formAwal frmawal = new formAwal();
+                FormHome frmawal = new FormHome();
                 frmawal.Show();
                 this.Close();
             }

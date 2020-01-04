@@ -262,8 +262,8 @@ namespace GazethruApps
         }
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            formAwal frmawal = new formAwal();
-            frmawal.Show();
+            FormHome frmhome = new FormHome();
+            frmhome.Show();
             this.Close();
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -322,8 +322,8 @@ namespace GazethruApps
         {
             if (e.status)
             {
-                formAwal frmawal = new formAwal();
-                frmawal.Show();
+                FormHome frmhome = new FormHome();
+                frmhome.Show();
                 this.Close();
             }
         }
