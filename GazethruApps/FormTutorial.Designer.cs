@@ -49,35 +49,38 @@
             // 
             // BtnBack
             // 
+            this.BtnBack.BackColor = System.Drawing.Color.Khaki;
             this.BtnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBack.Location = new System.Drawing.Point(1704, 222);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(117, 39);
             this.BtnBack.TabIndex = 1;
             this.BtnBack.Text = "Kembali";
-            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.UseVisualStyleBackColor = false;
             this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(142, 100);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1556, 19);
+            this.textBox1.Size = new System.Drawing.Size(1477, 19);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Permainan Memilih (?)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(142, 148);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1556, 634);
+            this.richTextBox1.Size = new System.Drawing.Size(1477, 634);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "Aturannya....";
+            this.richTextBox1.Text = "Terdapat soal yang sudah disediakan oleh admin dst";
             // 
             // timer1
             // 
@@ -88,6 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SeaGreen;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);

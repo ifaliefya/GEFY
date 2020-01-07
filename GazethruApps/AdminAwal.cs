@@ -12,8 +12,6 @@ namespace GazethruApps
 {
     public partial class AdminAwal : Form
     {
-        public static string Category;
-
         public AdminAwal()
         {
             InitializeComponent();
@@ -98,7 +96,7 @@ namespace GazethruApps
 
         private void Home_Click(object sender, EventArgs e)
         {
-            formAwal Home = new formAwal();
+            FormHome Home = new FormHome();
             Home.Show();
             this.Hide();
         }

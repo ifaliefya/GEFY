@@ -31,19 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTutup = new System.Windows.Forms.Button();
+            this.btnMini = new System.Windows.Forms.Button();
+            this.buttonAdmin2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.buttonInfo = new System.Windows.Forms.Button();
+            this.BtnTahu = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.btnUser = new System.Windows.Forms.Button();
+            this.BtnMisi = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.PresenceCheck = new System.Windows.Forms.Panel();
             this.TimerTombol = new System.Windows.Forms.Timer(this.components);
-            this.btnTutup = new System.Windows.Forms.Button();
-            this.btnMini = new System.Windows.Forms.Button();
-            this.buttonAdmin2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -61,6 +61,43 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1920, 38);
             this.panel1.TabIndex = 31;
+            // 
+            // btnTutup
+            // 
+            this.btnTutup.BackColor = System.Drawing.SystemColors.Control;
+            this.btnTutup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTutup.Location = new System.Drawing.Point(1880, 1);
+            this.btnTutup.Name = "btnTutup";
+            this.btnTutup.Size = new System.Drawing.Size(37, 35);
+            this.btnTutup.TabIndex = 36;
+            this.btnTutup.Text = "x";
+            this.btnTutup.UseVisualStyleBackColor = false;
+            this.btnTutup.Click += new System.EventHandler(this.btnTutup_Click);
+            // 
+            // btnMini
+            // 
+            this.btnMini.BackColor = System.Drawing.SystemColors.Control;
+            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMini.Location = new System.Drawing.Point(1841, 1);
+            this.btnMini.Name = "btnMini";
+            this.btnMini.Size = new System.Drawing.Size(37, 35);
+            this.btnMini.TabIndex = 35;
+            this.btnMini.Text = "-";
+            this.btnMini.UseVisualStyleBackColor = false;
+            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
+            // 
+            // buttonAdmin2
+            // 
+            this.buttonAdmin2.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAdmin2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdmin2.Location = new System.Drawing.Point(1724, 1);
+            this.buttonAdmin2.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAdmin2.Name = "buttonAdmin2";
+            this.buttonAdmin2.Size = new System.Drawing.Size(116, 37);
+            this.buttonAdmin2.TabIndex = 34;
+            this.buttonAdmin2.Text = "Login Admin";
+            this.buttonAdmin2.UseVisualStyleBackColor = false;
+            this.buttonAdmin2.Click += new System.EventHandler(this.buttonAdmin2_Click);
             // 
             // pictureBox2
             // 
@@ -102,21 +139,21 @@
             this.progressBar2.Size = new System.Drawing.Size(225, 5);
             this.progressBar2.TabIndex = 41;
             // 
-            // buttonInfo
+            // BtnTahu
             // 
-            this.buttonInfo.BackColor = System.Drawing.Color.Transparent;
-            this.buttonInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonInfo.BackgroundImage")));
-            this.buttonInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonInfo.FlatAppearance.BorderSize = 0;
-            this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInfo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInfo.ForeColor = System.Drawing.Color.White;
-            this.buttonInfo.Location = new System.Drawing.Point(218, 477);
-            this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(225, 150);
-            this.buttonInfo.TabIndex = 40;
-            this.buttonInfo.UseVisualStyleBackColor = false;
-            this.buttonInfo.Click += new System.EventHandler(this.buttonInfo_Click);
+            this.BtnTahu.BackColor = System.Drawing.Color.Transparent;
+            this.BtnTahu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnTahu.BackgroundImage")));
+            this.BtnTahu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnTahu.FlatAppearance.BorderSize = 0;
+            this.BtnTahu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTahu.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTahu.ForeColor = System.Drawing.Color.White;
+            this.BtnTahu.Location = new System.Drawing.Point(218, 477);
+            this.BtnTahu.Name = "BtnTahu";
+            this.BtnTahu.Size = new System.Drawing.Size(225, 150);
+            this.BtnTahu.TabIndex = 40;
+            this.BtnTahu.UseVisualStyleBackColor = false;
+            this.BtnTahu.Click += new System.EventHandler(this.BtnTahu_Click);
             // 
             // progressBar1
             // 
@@ -128,21 +165,21 @@
             this.progressBar1.Size = new System.Drawing.Size(225, 5);
             this.progressBar1.TabIndex = 43;
             // 
-            // btnUser
+            // BtnMisi
             // 
-            this.btnUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUser.BackgroundImage")));
-            this.btnUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnUser.FlatAppearance.BorderSize = 0;
-            this.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUser.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUser.ForeColor = System.Drawing.Color.White;
-            this.btnUser.Location = new System.Drawing.Point(1592, 477);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.Size = new System.Drawing.Size(225, 150);
-            this.btnUser.TabIndex = 42;
-            this.btnUser.UseVisualStyleBackColor = false;
-            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            this.BtnMisi.BackColor = System.Drawing.Color.Transparent;
+            this.BtnMisi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnMisi.BackgroundImage")));
+            this.BtnMisi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnMisi.FlatAppearance.BorderSize = 0;
+            this.BtnMisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnMisi.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMisi.ForeColor = System.Drawing.Color.White;
+            this.BtnMisi.Location = new System.Drawing.Point(1592, 477);
+            this.BtnMisi.Name = "BtnMisi";
+            this.BtnMisi.Size = new System.Drawing.Size(225, 150);
+            this.BtnMisi.TabIndex = 42;
+            this.BtnMisi.UseVisualStyleBackColor = false;
+            this.BtnMisi.Click += new System.EventHandler(this.BtnMisi_Click);
             // 
             // panel2
             // 
@@ -166,43 +203,6 @@
             // 
             this.TimerTombol.Tick += new System.EventHandler(this.TimerTombol_Tick);
             // 
-            // btnTutup
-            // 
-            this.btnTutup.BackColor = System.Drawing.SystemColors.Control;
-            this.btnTutup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTutup.Location = new System.Drawing.Point(1880, 1);
-            this.btnTutup.Name = "btnTutup";
-            this.btnTutup.Size = new System.Drawing.Size(37, 35);
-            this.btnTutup.TabIndex = 36;
-            this.btnTutup.Text = "x";
-            this.btnTutup.UseVisualStyleBackColor = false;
-            this.btnTutup.Click += new System.EventHandler(this.btnTutup_Click);
-            // 
-            // btnMini
-            // 
-            this.btnMini.BackColor = System.Drawing.SystemColors.Control;
-            this.btnMini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMini.Location = new System.Drawing.Point(1841, 1);
-            this.btnMini.Name = "btnMini";
-            this.btnMini.Size = new System.Drawing.Size(37, 35);
-            this.btnMini.TabIndex = 35;
-            this.btnMini.Text = "-";
-            this.btnMini.UseVisualStyleBackColor = false;
-            this.btnMini.Click += new System.EventHandler(this.btnMini_Click);
-            // 
-            // buttonAdmin2
-            // 
-            this.buttonAdmin2.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonAdmin2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAdmin2.Location = new System.Drawing.Point(1724, 1);
-            this.buttonAdmin2.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAdmin2.Name = "buttonAdmin2";
-            this.buttonAdmin2.Size = new System.Drawing.Size(116, 37);
-            this.buttonAdmin2.TabIndex = 34;
-            this.buttonAdmin2.Text = "Login Admin";
-            this.buttonAdmin2.UseVisualStyleBackColor = false;
-            this.buttonAdmin2.Click += new System.EventHandler(this.buttonAdmin2_Click);
-            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,15 +213,16 @@
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.btnUser);
+            this.Controls.Add(this.BtnMisi);
             this.Controls.Add(this.progressBar2);
-            this.Controls.Add(this.buttonInfo);
+            this.Controls.Add(this.BtnTahu);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormHome";
             this.Load += new System.EventHandler(this.FormHome_Load);
             this.panel1.ResumeLayout(false);
@@ -240,9 +241,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.Button buttonInfo;
+        private System.Windows.Forms.Button BtnTahu;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button btnUser;
+        private System.Windows.Forms.Button BtnMisi;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel PresenceCheck;
         private System.Windows.Forms.Timer TimerTombol;

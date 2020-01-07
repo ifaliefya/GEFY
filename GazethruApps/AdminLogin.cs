@@ -21,7 +21,7 @@ namespace GazethruApps
         private void linkLabelBackHome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-            formAwal back = new formAwal();
+            FormHome back = new FormHome();
             back.Show();
         }
 

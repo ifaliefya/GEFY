@@ -14,12 +14,14 @@ namespace GazethruApps
 {
     public partial class FormVideo : Form
     {
+        //deklarasi variabel untuk menampilkan data//
         List<int> ShowID = new List<int>();
         int counter = 0;
         int maxCounter;
         int TengahID;
-
         SqlConnection con = new SqlConnection(Properties.Settings.Default.sqlcon);
+
+        //deklarasi variabel interaksi gerakan mata
         KendaliTombol kendali;
         List<double> wx;
         List<double> wy;
@@ -262,7 +264,7 @@ namespace GazethruApps
         }
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            formAwal frmawal = new formAwal();
+            FormHome frmawal = new FormHome();
             frmawal.Show();
             this.Close();
         }
@@ -322,7 +324,7 @@ namespace GazethruApps
         {
             if (e.status)
             {
-                formAwal frmawal = new formAwal();
+                FormHome frmawal = new FormHome();
                 frmawal.Show();
                 this.Close();
             }

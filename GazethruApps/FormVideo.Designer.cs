@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PanelTengah = new System.Windows.Forms.Panel();
-            this.BtnPlay = new System.Windows.Forms.Button();
             this.TbxJudulTengah = new System.Windows.Forms.RichTextBox();
             this.TbxDescTengah = new System.Windows.Forms.RichTextBox();
             this.PbxTengah = new System.Windows.Forms.PictureBox();
+            this.BtnPlay = new System.Windows.Forms.Button();
             this.BtnPrev = new System.Windows.Forms.Button();
             this.BtnNext = new System.Windows.Forms.Button();
             this.PanelKiri = new System.Windows.Forms.Panel();
@@ -54,7 +54,7 @@
             // 
             // PanelTengah
             // 
-            this.PanelTengah.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.PanelTengah.BackColor = System.Drawing.Color.Gold;
             this.PanelTengah.Controls.Add(this.TbxJudulTengah);
             this.PanelTengah.Controls.Add(this.TbxDescTengah);
             this.PanelTengah.Controls.Add(this.PbxTengah);
@@ -62,17 +62,6 @@
             this.PanelTengah.Name = "PanelTengah";
             this.PanelTengah.Size = new System.Drawing.Size(680, 706);
             this.PanelTengah.TabIndex = 0;
-            // 
-            // BtnPlay
-            // 
-            this.BtnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnPlay.Location = new System.Drawing.Point(688, 931);
-            this.BtnPlay.Name = "BtnPlay";
-            this.BtnPlay.Size = new System.Drawing.Size(117, 34);
-            this.BtnPlay.TabIndex = 4;
-            this.BtnPlay.Text = "PLAY";
-            this.BtnPlay.UseVisualStyleBackColor = true;
-            this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
             // TbxJudulTengah
             // 
@@ -106,26 +95,41 @@
             this.PbxTengah.TabIndex = 0;
             this.PbxTengah.TabStop = false;
             // 
+            // BtnPlay
+            // 
+            this.BtnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnPlay.Location = new System.Drawing.Point(688, 931);
+            this.BtnPlay.Name = "BtnPlay";
+            this.BtnPlay.Size = new System.Drawing.Size(117, 34);
+            this.BtnPlay.TabIndex = 4;
+            this.BtnPlay.Text = "PLAY";
+            this.BtnPlay.UseVisualStyleBackColor = true;
+            this.BtnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
+            // 
             // BtnPrev
             // 
+            this.BtnPrev.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(214)))), ((int)(((byte)(121)))));
+            this.BtnPrev.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPrev.Location = new System.Drawing.Point(171, 556);
             this.BtnPrev.Name = "BtnPrev";
             this.BtnPrev.Size = new System.Drawing.Size(75, 47);
             this.BtnPrev.TabIndex = 1;
             this.BtnPrev.Text = "<<";
-            this.BtnPrev.UseVisualStyleBackColor = true;
+            this.BtnPrev.UseVisualStyleBackColor = false;
             this.BtnPrev.Click += new System.EventHandler(this.BtnPrev_Click);
             // 
             // BtnNext
             // 
+            this.BtnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(214)))), ((int)(((byte)(121)))));
+            this.BtnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNext.Location = new System.Drawing.Point(1690, 556);
             this.BtnNext.Name = "BtnNext";
             this.BtnNext.Size = new System.Drawing.Size(75, 47);
             this.BtnNext.TabIndex = 2;
             this.BtnNext.Text = ">>";
-            this.BtnNext.UseVisualStyleBackColor = true;
+            this.BtnNext.UseVisualStyleBackColor = false;
             this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // PanelKiri
@@ -140,6 +144,7 @@
             // 
             // TbxJudulKiri
             // 
+            this.TbxJudulKiri.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.TbxJudulKiri.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxJudulKiri.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbxJudulKiri.Location = new System.Drawing.Point(32, 276);
@@ -170,6 +175,7 @@
             // 
             // TbxJudulKanan
             // 
+            this.TbxJudulKanan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.TbxJudulKanan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxJudulKanan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbxJudulKanan.Location = new System.Drawing.Point(32, 276);
@@ -209,7 +215,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.BtnPlay);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.PanelTengah);
@@ -217,6 +224,7 @@
             this.Controls.Add(this.PanelKiri);
             this.Controls.Add(this.BtnNext);
             this.Controls.Add(this.BtnPrev);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVideo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVideo";
